@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Seguna Pagina</title>
+		
+		
+	</head>	
+	<body>
+		
+		<h1 style="align-content: center">Ingrese Datos</h1>
+
+		<p id="n1">Primer Numero</p>
+		<input id="primero"type="text" name="primero">
+		<p id="n2">Primer Numero</p>
+		<input id="segundo" type="text" name="segundo"><br><br>
+		<h2 style="align-content: center">Operaciones a realizar</h2><br><br>
+		<button type="button" onclick="suma()">Suma</button>
+		<button type="button" onclick="resta()">Resta</button>
+		<button type="button"onclick="multiplicacion()">Multiplicacion</button>
+		<button type="button" onclick="division()">Division</button><br>
+		<p id="result">El resultado es:</p>
+
+	<script>
+		
+			function suma() {
+				var a = document.getElementById("primero").value;
+				var b = document.getElementById("segundo").value;
+				document.getElementById("result").innerHTML = "El resultado es :"+(parseInt(a)+parseInt(b));
+			}
+
+			function resta() {
+				var a = document.getElementById("primero").value;
+				var b = document.getElementById("segundo").value;
+				document.getElementById("result").innerHTML = "El resultado es :"+(parseInt(a)-parseInt(b));
+			}
+
+			function multiplicacion() {
+			    var a = document.getElementById("primero").value;
+				var b = document.getElementById("segundo").value;
+				document.getElementById("result").innerHTML = "El resultado es :"+(parseInt(a)*parseInt(b));
+			}
+
+			function division() {
+				var a = document.getElementById("primero").value;
+				var b = document.getElementById("segundo").value;
+				if(parseInt(b)!=0){
+                    document.getElementById("result").innerHTML = "El resultado es :"+(parseInt(a)/parseInt(b));
+                }else{
+                    document.getElementById("result").innerHTML = "El resultado es :  NO SE PUEDE DIVIDIR ENTRE 0";
+                }
+			}
+		</script>
+
+	</body>
+</html>
+
