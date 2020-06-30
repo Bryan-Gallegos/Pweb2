@@ -33,17 +33,19 @@
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="index.html">Home</a></li>
 									<li><a href="contact.html">Contact</a></li>
-
+									
 									{% if user.is_authenticated %}
 									<li>Hello, {{user.first_name}}</li>
+									<li><a href="admin/travello/destination/add/">Add Destiny</a></li>
 									<li><a href="accounts/logout">Logout</a></li>	
+									
 									{% else %}
 									<li><a href="accounts/register">Register</a></li>
 									<li><a href="accounts/login">Login</a></li>
 									{% endif %}
 								</ul>
 							</nav>
-							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+							<div class="header_phone ml-auto">Call us: +51 950 723 143</div>
 
 							<!-- Hamburger -->
 
@@ -83,7 +85,7 @@
 			</ul>
 		</div>
 		<div class="menu_social">
-			<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+			<div class="menu_phone ml-auto">Llamanos: 00-56 445 678 33</div>
 			<ul class="d-flex flex-row align-items-start justify-content-start">
 				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -111,7 +113,7 @@
 							<div class="row">
 								<div class="col">
 									<div class="home_slider_content">
-										<div class="home_title"><h2>Let us take you away</h2></div>
+										<div class="home_title"><h2>Nosotros te llevaremos</h2></div>
 									</div>
 								</div>
 							</div>
@@ -143,7 +145,7 @@
 							<div class="row">
 								<div class="col">
 									<div class="home_slider_content">
-										<div class="home_title"><h2>Let us take you away</h2></div>
+										<div class="home_title"><h2>Nosotros te llevaremos</h2></div>
 									</div>
 								</div>
 							</div>
@@ -155,9 +157,9 @@
 
 			<div class="home_page_nav">
 				<ul class="d-flex flex-column align-items-end justify-content-end">
-					<li><a href="#" data-scroll-to="#destinations">Offers<span>01</span></a></li>
-					<li><a href="#" data-scroll-to="#testimonials">Testimonials<span>02</span></a></li>
-					<li><a href="#" data-scroll-to="#news">Latest<span>03</span></a></li>
+					<li><a href="#" data-scroll-to="#destinations">Ofertas<span>01</span></a></li>
+					<li><a href="#" data-scroll-to="#testimonials">Testimonios<span>02</span></a></li>
+					<li><a href="#" data-scroll-to="#news">Ultimos<span>03</span></a></li>
 				</ul>
 			</div>
 		</div>
@@ -165,28 +167,7 @@
 
 	<!-- Search -->
 
-	<div class="home_search">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_search_container">
-						<div class="home_search_title">Search for your trip</div>
-						<div class="home_search_content">
-							<form action="#" class="home_search_form" id="home_search_form">
-								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="City" required="required">
-									<input type="text" class="search_input search_input_2" placeholder="Departure" required="required">
-									<input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">
-									<input type="text" class="search_input search_input_4" placeholder="Budget" required="required">
-									<button class="home_search_button">search</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 
 	<!-- Intro -->
 
@@ -203,7 +184,7 @@
 								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 									<div class="intro_icon"><img src="{% static 'images/beach.svg' %}" alt=""></div>
 									<div class="intro_content">
-										<div class="intro_title">Top Destinations</div>
+										<div class="intro_title">Mejores Destinos</div>
 										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
 									</div>
 								</div>
@@ -214,7 +195,7 @@
 								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 									<div class="intro_icon"><img src="{% static 'images/wallet.svg' %}" alt=""></div>
 									<div class="intro_content">
-										<div class="intro_title">The Best Prices</div>
+										<div class="intro_title">Los Mejores Precios</div>
 										<div class="intro_subtitle"><p>Sollicitudin mauris lobortis in.</p></div>
 									</div>
 								</div>
@@ -225,7 +206,7 @@
 								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
 									<div class="intro_icon"><img src="{% static 'images/suitcase.svg' %}" alt=""></div>
 									<div class="intro_content">
-										<div class="intro_title">Amazing Services</div>
+										<div class="intro_title">Servicios sorprendentes</div>
 										<div class="intro_subtitle"><p>Nulla pretium tincidunt felis, nec.</p></div>
 									</div>
 								</div>
@@ -245,7 +226,7 @@
 			<div class="row">
 				<div class="col text-center">
 					<div class="section_subtitle">simply amazing places</div>
-					<div class="section_title"><h2>Popular Destinations</h2></div>
+					<div class="section_title"><h2>Destinos Populares</h2></div>
 				</div>
 			</div>
 			<div class="row destinations_row">
@@ -258,7 +239,7 @@
 								<img src="{{dest.img.url}}" alt="">
 								
 								{% if dest.offer %}
-								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+								<div class="spec_offer text-center"><a href="#">Oferta Especial</a></div>
 								{% endif %}
 
 							</div>
