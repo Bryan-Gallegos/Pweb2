@@ -76,11 +76,8 @@ WSGI_APPLICATION = 'Final.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'final',
-        'USER':'postgres',
-        'PASSWORD':'bryan2001',
-        'HOST':'localhost'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
