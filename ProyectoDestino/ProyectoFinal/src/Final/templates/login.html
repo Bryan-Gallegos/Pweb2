@@ -16,18 +16,17 @@
         <form action="login" method="post">
             {% csrf_token %}
             <div class="inputBox">
-                <input text="text" name="username">
                 <label>Username</label>
+                <input text="text" name="username">
+                
             </div>
             <div class="inputBox">
-                <input type="password" name="password"><br>
                 <label>Password</label>
+                <input type="password" name="password"><br>
+                
             </div>
             <input type="submit">
         </form>
-    </div>
-    <div class="new">
-        <input type="submit" value="Register" href="account/register">
     </div>
     <div>
         {% for message in message %}

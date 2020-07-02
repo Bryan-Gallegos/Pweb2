@@ -1,23 +1,50 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/Register.css' %}">
 </head>
 <body>
-    <form action="register" method="post">
+    <div class="box">
+        <h1>Register account</h1>
+        <form action="register" method="post">
         {% csrf_token %}
-
-        <input type="text" name="first_name" placeholder="First Name"><br>
-        <input type="text" name="last_name" placeholder="Last Name"><br>
-        <input type="text" name="username" placeholder="Username"><br>
-        <input type="email" name="email" placeholder="Email"><br>
-        <input type="password" name="password1" placeholder="Password"><br>
-        <input type="password" name="password2" placeholder="Confirm Password"><br>
-        <input type="submit">
-    </form>
-
+            <div class="inputBox">
+                <label>First Name</label>
+                <input type="text" name="first_name">
+                
+            </div>
+            <div class="inputBox">
+                <label>Last Name</label>
+                <input type="text" name="last_name">
+                
+            </div>
+            <div class="inputBox">
+                <label>UserName</label>
+                <input type="text" name="username">
+                
+            </div>
+            <div class="inputBox">
+                <label>Email</label>
+                <input type="email" name="email">
+                
+            </div>
+            <div class="inputBox">
+                <label>Password</label>
+                <input type="password" name="password1">
+                
+            </div>
+            <div class="inputBox">
+                <label>Confirm Password</label>
+                <input type="password" name="password2">
+                
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
     <div>
         {% for message in messages %}
         <h3>  {{message}}  </h3>
