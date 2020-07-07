@@ -12,10 +12,14 @@
         <h1>Travello</h1>
     </div>
     <div class="box">
-        <h2>Delete</h2>
-        <form action="addDestiny" method="post">{% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Delete"/>
+        <h2>Delete Destiny</h2>
+        <form action="." method="post">
+            {% csrf_token %}
+            <div class="inputBox">
+                <label>Wants to erase this destiny:</label>
+                <h1>{{objeto.name}}</h1>
+            </div>
+            <input type="submit" value="Delete">
         </form>
     </div>
     <div>
