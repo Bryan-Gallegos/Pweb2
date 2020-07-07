@@ -13,10 +13,8 @@
     </div>
     <div class="box">
         <h2>Show</h2>
-        <form action="addDestiny" method="post">{% csrf_token %}
-            {{form.as_p}}
-            
-        </form>
+        <h3>{{objeto.name}}</h3>
+        <h3>{{objeto.desc}}</h3>
     </div>
     <div>
         {% for message in message %}
