@@ -10,6 +10,7 @@ def add(request):
         desc=request.POST['desc']
         price=request.POST['price']
         offer=request.POST['offer']
+        
     else:
         return render(request,'addDestiny.html')
 def remove(request,myID):
