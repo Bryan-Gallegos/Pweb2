@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from travello.models import Destination
 from django.contrib.auth.models import User, auth
 # Create your views here.
 
@@ -55,3 +56,46 @@ def register(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def addDestiny(request):
+    print('create image')
+    if request.method=='POST':
+        name=request.POST['name']
+        direc=request.POST['direc']
+        desc=request.POST['desc']
+        price=request.POST['price']
+        offer=request.POST.get['offer',False]
+        if offer=='on':
+            offer=True
+        else:
+            offer=False
+        imgs=Destination.objects.create(name=name,img=direc,desc=desc,price=price,offer=offer)
+        imgs.save()
+        dests=Destination.objects.all()
+    return render(request,'addDestiny.html')
+
+def removeDestiny(request,id):
+    data=Destination.objects.get(id=id)
+    data.delete()
+    return redirect(to='listar')
+
+def editDestiny(request,id):
+    data=Destination.objects.get(id=id)
+    if request.method=='POST':
+        data.id=request.POST['textid']
+        data.name=request.POST['name']
+        data.img=request.POST['direccion']
+        data.desc=request.POST['desc']
+        data.price=request.POST['price']
+        data.offer=request.POST.get['offer',False]
+        if data.offer=='on':
+            data.offer=True
+        else:
+            data.offer=False
+        data.save()
+        return redirect('listar')
+    return render(request,'editDestiny.html',{'data':data,})
+
+def listar(request):
+    data=Destination.objects.all()
+    return render(request,'listar.html',{'data':data,})

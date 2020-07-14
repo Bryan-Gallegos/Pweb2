@@ -8,21 +8,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'styles/destinos.css' %}">
 </head>
 <body>
-    <div class=tapa>
-        <h1>Travello</h1>
-    </div>
-    <div class="box">
-        <h2>Add</h2>
-        <form action="addDestiny" method="post">{% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Add"/>
-        </form>
-    </div>
-    <div>
-        {% for message in message %}
-        <h3>{{message}}</h3>
-        {% endfor %}
-    </div>
-
+    <form action="addDestiny" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Nombre del destino"><br>
+        <input type="file" name="direc" ><br>
+        <textarea name="desc"  cols="30" rows="4" placeholder="Descripcion del lugar"></textarea><br>
+        <input type="number" name="price" placeholder="Precio"><br>
+        <input type="checkbox" name="offer" >
+        <label> Offer</label><br>
+        <input type="submit" value="submit">
+    </form>
 </body>
 </html>

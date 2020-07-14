@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Listado de Lugares</title>
+</head>
+<body>
+	<h2>Lista</h2>
+	<table>
+		<tr>
+			<th>Nombre</th>
+			<th>Imagen</th>
+			<th>Descripcion</th>
+			<th>precio</th>
+			<th>oferta</th>
+			<th>opciones</th>
+		</tr>
+		{% for dests in data %}
+		<tr>
+			<td>{{ dests.name }}</td>
+			<td><img src="{{dests.img.url}}" width="100" height="100"></td>
+			<td>{{ dests.desc }}</td>
+			<td>{{ dests.price }}</td>
+			<td>{{ dests.offer }}</td>
+			<td><a href="{% url 'eliminar' dests.id %}">Eliminar</a>
+				<a href="{% url 'modificar' dests.id %}">Modificar</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
