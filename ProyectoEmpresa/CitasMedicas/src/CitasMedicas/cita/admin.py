@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MedicalCite
+from .models import Cite
 # Register your models here.
 
-admin.site.register(MedicalCite)
+admin.site.register(Cite)

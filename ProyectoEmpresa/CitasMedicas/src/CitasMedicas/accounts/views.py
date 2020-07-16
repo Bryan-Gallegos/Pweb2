@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from cita.models import MedicalCite
+from cita.models import Cite
 from django.contrib.auth.models import User,auth
 
 # Create your views here.
