@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" media="all">
 </head>
 <body>
-    <h1 class="title-agile text-center">Register Form</h1>
+    <h1 class="title-agile text-center">Register</h1>
     <div class="content-w3ls">
         <div class="content-bottom">
 	    <h2>Register Here <i class="fa fa-hand-o-down" aria-hidden="true"></i></h2>
@@ -27,29 +27,41 @@
                 <div class="field-group">
                     <span class="fa fa-user" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="text1" id="text1" type="text" value="" placeholder="Username" required>
+                        <input name="first_name" type="text" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="last_name" type="text" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-users" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="username" type="text" placeholder="Username">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-envelope" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="email" id="email" type="email" value="" placeholder="Email" required>
+                        <input name="email" type="email" value="" placeholder="Email">
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="number" id="number" type="text" value="" placeholder="Contact Number" required>
+                        <input name="password1" type="text" placeholder="Password" >
                     </div>
                 </div>
                 <div class="field-group">
                     <span class="fa fa-lock" aria-hidden="true"></span>
                     <div class="wthree-field">
-                        <input name="password" id="myInput" type="Password" placeholder="Password">
+                        <input name="password2" type="Password" placeholder="Confirm Password">
                     </div>
                 </div>
                 <div class="wthree-field">
-                    <input id="saveForm" name="saveForm" type="submit" value="Register" />
+                    <input type="submit" value="Register" />
                 </div>
 				<div class="account">
 					<p class="text-center">Already have an account ? <a href="./login">Login</a></p>
