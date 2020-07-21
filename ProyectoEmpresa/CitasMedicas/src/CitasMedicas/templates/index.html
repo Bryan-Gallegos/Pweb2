@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Medical</title>
+    <title>B&J Clinicas de la Salud</title>
     <link rel="icon" href="static/img/favicon.png">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
@@ -34,27 +34,27 @@
                             id="navbarSupportedContent">
                             <ul class="navbar-nav align-items-center">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="">Home</a>
+                                    <a class="nav-link" href="">Inicio</a>
                                 </li>
                                 {% if user.is_authenticated %}
                                 <li class="nav-item">
-                                    <a class="nav-link">Welcome, {{user.first_name}}</a>
+                                    <a class="nav-link">Hola, {{user.first_name}}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="accounts/logout">Logout</a>
+                                    <a class="nav-link" href="accounts/logout">Cerrar Sesion</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="accounts/about">About Us</a>
+                                    <a class="nav-link" href="accounts/about">Acerca de nosotros</a>
                                 </li>
                                 {% else %}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="accounts/login">Login</a>
+                                    <a class="nav-link" href="accounts/login">Iniciar Sesion</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="accounts/register">Register</a>
+                                    <a class="nav-link" href="accounts/register">Registrate</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="accounts/about">About Us</a>
+                                    <a class="nav-link" href="accounts/about">Acerca de nosotros</a>
                                 </li>
                                 {% endif %}
                             </ul>
@@ -70,24 +70,22 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h1>Bringing the future
-                                of healthcare</h1>
-                            <p>Deep created replenish herb without night fruit day earth evening Called his
-                                green were they're fruitful to over Sea bearing sixth Earth face. Them lesser
-                                great you'll second </p>
-                            <a href="#" class="btn_2">Make an appointment</a>
+                            <h1>Trayendo el futuro de la 
+                            asistencia medica</h1>
+                            <p>Una prueba mínimamente invasiva que se realiza en una muestra de sangre para identificar células cancerosas tumorales o ADN de células tumorales que están circulando en la sangre. Puede ser útil para diagnosticar un cáncer en fase temprana y para planificar el tratamiento en función del tipo de tumor, determinar su eficacia y detectar una recaída. Se trata de un procedimiento sencillo, que evita trastornos al paciente y que representa un ahorro de tiempo  </p>
+                            <a href="#" class="btn_2">Pide tu cita ahora!</a>
                             <div class="banner_item">
                                 <div class="single_item">
                                     <img src="{% static 'img/icon/banner_1.svg' %}" alt="">
-                                    <h5>Emergency Cases</h5>
+                                    <h5>Casos de emergencia</h5>
                                 </div>
                                 <div class="single_item">
                                     <img src="{% static 'img/icon/banner_2.svg' %}" alt="">
-                                    <h5>Easy Appointment</h5>
+                                    <h5>Cita fácil</h5>
                                 </div>
                                 <div class="single_item">
                                     <img src="{% static 'img/icon/banner_3.svg' %}" alt="">
-                                    <h5>Qualfied Doctores</h5>
+                                    <h5>Doctores capacitados</h5>
                                 </div>
                             </div>
                         </div>
@@ -101,13 +99,10 @@
             <div class="row">
                 <div class="col-xl-4 col-md-4 align-self-center">
                     <div class="single_feature_text ">
-                        <h2>Provide Special
-                            Services</h2>
-                        <p>Third beast two she'd multiply they're form he above do Replenish days said
-                            set doesn't can't subdue air herb lesser dominion saying fruitful given
-                            fifth winged Third beast two she'd multiply they're form he above their
-                            Replenish days said set doesn can'which.</p>
-                        <a href="#" class="btn_2">More service</a>
+                        <h2>Proporcionamos 
+                        Servicios Especiales</h2>
+                        <p>Nuestro amplio prestigio hacen de esta clinica la mas reconocida de la UNSA, y ser una de las mejores en todo el pais, por ello nuestros centros estan preparados para todo, desde una quemadura de grado 1 hasta una epidemia contando actualmente con 250 camas UCI repartidas en todas nuestras sucursales listas para su uso</p>
+                        <a href="#" class="btn_2">Mas servicios ...</a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8">
@@ -118,9 +113,8 @@
                                     <div class="single_feature_part">
                                         <span class="single_feature_icon"><img src="{% static 'img/icon/feature_1.svg' %}"
                                                 alt=""></span>
-                                        <h4>Better Future</h4>
-                                        <p>Darkness multiply rule Which from without life creature blessed
-                                            give moveth moveth seas make day which divided our have.</p>
+                                        <h4>Saliva e implantes dentales</h4>
+                                        <p>De las propiedades antisépticas y cicatrizantes de la saliva hace tiempo que se tiene noticia. Lo novedoso es que un equipo de investigadores de la Universidad de Chile ha descubierto la molécula que acelera la cicatrización y que estimula la creación de vasos sanguíneos: se trata de la que la histanina-1.</p>
                                     </div>
                                 </div>
                             </div>
@@ -129,9 +123,8 @@
                                     <div class="single_feature_part">
                                         <span class="single_feature_icon"><img src="{% static 'img/icon/feature_2.svg' %}"
                                                 alt=""></span>
-                                        <h4>Better Future</h4>
-                                        <p>Darkness multiply rule Which from without life creature blessed
-                                            give moveth moveth seas make day which divided our have.</p>
+                                        <h4>Reduccion de ceguera</h4>
+                                        <p>La revista ‘Biomedical Optical Express’ acaba de presentar este gran avance tecnológico que posibilita un tratamiento quirúrgico contra la primera causa de pérdida total de la vista en mayores de 55 años. Los minitelescopios iolAMD, diseñados por el equipo del catedrático Pablo Artal en colaboración con el Dr. Qureshi del London Eye Hospital Pharma, se implantan en diez minutos y sin necesidad de suturas al ser los primeros fabricados con un material flexible.</p>
                                     </div>
                                 </div>
                             </div>
@@ -140,9 +133,9 @@
                                     <div class="single_feature_part">
                                         <span class="single_feature_icon"><img src="{% static 'img/icon/feature_2.svg' %}"
                                                 alt=""></span>
-                                        <h4>Better Future</h4>
-                                        <p>Darkness multiply rule Which from without life creature blessed
-                                            give moveth moveth seas make day which divided our have.</p>
+                                        <h4>Prevencion de la Perdida de Vista</h4>
+                                        <p>La semana pasada, el oftalmólogo Jordi Monés afirmó "estar entusiasmado" con las perspectivas que abre la investigación con células madre susceptible de permitir futuras nuevas terapias para tratar problemas de grave pérdida de visión".
+										Monés está "impresionado" con los avances, especialmente los publicados en octubre pasado por la revista científica The Lancet, que muestran el desarrollo de células madre en pacientes y que ponen de manifiesto la eficacia y seguridad de ese tipo de terapia.</p>
                                     </div>
                                 </div>
                             </div>
@@ -151,9 +144,8 @@
                                     <div class="single_feature_part">
                                         <span class="single_feature_icon"><img src="{% static 'img/icon/feature_1.svg' %}"
                                                 alt=""></span>
-                                        <h4>Better Future</h4>
-                                        <p>Darkness multiply rule Which from without life creature blessed
-                                            give moveth moveth seas make day which divided our have.</p>
+                                        <h4>Uso de MAgnesio en Osteointegracion</h4>
+                                        <p>Puede el magnesio estimular la osteointegración en pacientes con problemas de osteoporosis? Los primeros resultados de una investigación llevada a cabo en la Universidad de Malmoe, Suecia, así lo indican. Al parecer el uso de magnesio soluble en favorece la regenaración ósea en los primeros días del implante, dando lugar a la aparición de calcio y fosfato muy similares a la estructura ósea..</p>
                                     </div>
                                 </div>
                             </div>
@@ -173,18 +165,13 @@
                 </div>
                 <div class="col-md-6 col-lg-5">
                     <div class="our_ability_member_text">
-                        <h2>Our Patients
-                            Are at the Centre of
-                            Everything We Do</h2>
-                        <p>Kind lesser bring said midst they're created signs made the beginni years
-                            created Beast upon whales herb seas evening she'd day green dominion
-                            evening in moved have fifth in won't in darkness fruitful god behold
-                            whos without bring created creature.</p>
+                        <h2>Los pacientes como nucleo de todo nuestro trabajo</h2>
+                        <p>A pesar de que hay diferencias entre la sanidad pública y la privada (no vamos a entrar ahora a analizar las distintas aproximaciones de ambas a las estrategias de negocio), lo que indudablemente sí comparten, es la constante presencia de las relaciones personales. Los actos médicos y todo aquello que los rodean, son momentos puramente emocionales. Si algún sector sabe -o debería- de humanización, de generar emociones, es sin duda el sanitario. Hace poco vimos en noticias a una persona afirmar que él había entendido lo que significaba la palabra “miedo” cuando vio cómo bajaban a su hijo a un quirófano. El miedo es una emoción básica o primaria, y a estas alturas, ya muchos conocemos la definición de la Experiencia de Cliente, que afirma que “es la emoción que se genera en la mente del consumidor como consecuencia de su relación con la entidad”. De aquí que B&J Clinica de la Salud se preocupa por cada uno de sus pacientes, dandole el mismo grado de importancia sin excepcion, ademas de contar tambien con areas verdes que promueven la relajacion y dando un ambiente de tranquilidad no solo al paciente, sino tambien a sus familiares.</p>
                         <ul>
-                            <li><span class="ti-mouse"></span>Modern Technology</li>
-                            <li><span class="ti-heart-broken"></span>Worldclass Facilities</li>
-                            <li><span class="ti-package"></span>Experienced Nurse</li>
-                            <li><span class="ti-headphone-alt"></span>24 Hours Support</li>
+                            <li><span class="ti-mouse"></span>Lo ultimo en tecnologia</li>
+                            <li><span class="ti-heart-broken"></span>Ambientes con estandares Internacionales</li>
+                            <li><span class="ti-package"></span>Personal Altamente Capacitado</li>
+                            <li><span class="ti-headphone-alt"></span>24/7 H Atencion Medica</li>
                         </ul>
                     </div>
                 </div>
@@ -199,14 +186,10 @@
             <div class="row justify-content-between align-items-center">
                 <div class="col-md-5 col-lg-5">
                     <div class="our_ability_member_text">
-                        <h2>We Analyse Your
-                            Health States In Order
-                            To Top Service</h2>
-                        <p>Kind lesser bring said midst they're created signs made the beginni years
-                            created Beast upon whales herb seas evening she'd day green dominion
-                            evening in moved have fifth in won't in darkness fruitful god behold
-                            whos without bring created creature.</p>
-                        <a href="#" class="btn_2">read more</a>
+                        <h2>Analizamos sus estados de salud para ofrecer un servicio superior</h2>
+                        <p>Hace poco, el doctor Perez Alvela, dio a conocer en un conocido medio de radio que para poder tratar a una persona en una terapia o una enfermedad, era indispensable saber las condiciones en la que esta persona esta, siendo un importante factor su edad, asi como su historia Clinica.
+                        Aqui en B&J Clinicas de la Salud nos preocupamos por ti y sabemos que estos factores haran que tengas un mejor cuidado por parte de nuestro personal dandonos un valor agregado que muy pocas clinicas poseen .</p>
+                        <a href="#" class="btn_2">Leer mas ....</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6">
@@ -222,8 +205,8 @@
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <div class="section_tittle text-center">
-                        <h2> Experienced Doctors</h2>
-                        <p>Face replenish sea good winged bearing years air divide wasHave night male also</p>
+                        <h2>Doctores Especializados</h2>
+                        <p>Toda nuestra plana de doctores han realizado capacitaciones a nivel no solo de America, sino tambien en Europa</p>
                     </div>
                 </div>
             </div>
@@ -311,7 +294,7 @@
         <div class="copyright_part">
             <div class="container">
                 <div class="row align-items-center">
-                    <p class="footer-text m-0 col-lg-8 col-md-12">© 2020 Register for Medical Cite. All rights reserved | Design by Medical Cite</p>
+                    <p class="footer-text m-0 col-lg-8 col-md-12">© 2020 B&J Clinicas de la Salud . Todos los derechos reservados | Design by Bryan Gallegos y Jimy Revilla</p>
                     <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
                     </div>
                 </div>
