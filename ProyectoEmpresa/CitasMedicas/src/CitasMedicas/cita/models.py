@@ -3,6 +3,7 @@ from datetime import datetime
 # Create your models here.
 class Doctor(models.Model):
     name=models.CharField(max_length = 100)
+    img=models.ImageField(upload_to='pics')
     last_name=models.CharField(max_length = 150)
     specialty=models.CharField(max_length = 50)
     code=models.IntegerField()
