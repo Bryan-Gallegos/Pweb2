@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -211,58 +212,21 @@
                 </div>
             </div>
             <div class="row">
+                {% for doc in docs %}
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <img src="{% static 'img/doctor/doctor_1.png' %}" alt="doctor">
+                            <img src="{{doc.img.url}}" alt="doctor">
                         </div>
                         <div class="single_text">
                             <div class="single_blog_text">
-                                <h3>DR Adam Billiard</h3>
-                                <p>Heart specialist</p>
+                                <h3>DR {{doc.name}} {{doc.last_name}}</h3>
+                                <p>{{doc.specialty}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_blog_item">
-                        <div class="single_blog_img">
-                            <img src="{% static 'img/doctor/doctor_4.png' %}" alt="doctor">
-                        </div>
-                        <div class="single_text">
-                            <div class="single_blog_text">
-                                <h3>DR Adam Billiard</h3>
-                                <p>Medicine specialist</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_blog_item">
-                        <div class="single_blog_img">
-                            <img src="{% static 'img/doctor/doctor_2.png' %}" alt="doctor">
-                        </div>
-                        <div class="single_text">
-                            <div class="single_blog_text">
-                                <h3>DR Fred Macyard</h3>
-                                <p>CHeart specialist</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_blog_item">
-                        <div class="single_blog_img">
-                            <img src="{% static 'img/doctor/doctor_3.png' %}" alt="doctor">
-                        </div>
-                        <div class="single_text">
-                            <div class="single_blog_text">
-                                <h3>DR Justin Stuard</h3>
-                                <p>Heart specialist</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
