@@ -1,0 +1,23 @@
+.boton {
+    border: transparent;
+    text-decoration:none;
+    font-weight:6000;
+    font-size:20px;
+    color:#ffffff;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    background-color:#67e1e6;
+    
+}
+p{
+    color: blue;
+    font-family: 'Open Sans';
+    font-size: 30;
+}
+body{
+    font-family: 'Open Sans';
+    background: url("https://image.freepik.com/vector-gratis/diseno-plantilla-papel-tapiz-medica-abstracta_53876-61802.jpg") no-repeat center center fixed;
+    background-size: cover;
+}

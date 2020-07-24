@@ -4,6 +4,10 @@ from cita.models import Cite
 from django.contrib.auth.models import User,auth
 
 # Create your views here.
+
+def manage(request):
+    return render(request,'manager.html',{})
+
 def login(request):
     if request.method=='POST':
         username=request.POST['username']

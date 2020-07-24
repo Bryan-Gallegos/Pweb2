@@ -38,6 +38,11 @@
                                     <a class="nav-link" href="">Inicio</a>
                                 </li>
                                 {% if user.is_authenticated %}
+                                {% if user.name == jimy %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accounts/manage">Gestionar</a>
+                                </li>
+                                {% endif %}
                                 <li class="nav-item">
                                     <a class="nav-link">Hola, {{user.first_name}}</a>
                                 </li>

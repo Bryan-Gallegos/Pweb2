@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Panel de Control B&J</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/manage.css' %}">
+</head>
+<body>
+    <p>Buen dia sir {{ user.first_name }}<br>Que puedo hacer por ti hoy?</p>
+    <button class="boton">Insertar</button><br><br>
+    <button class="boton">Modificar</button><br><br>
+    <button class="boton">Eliminar</button><br><br>
+</body>
+</html>
