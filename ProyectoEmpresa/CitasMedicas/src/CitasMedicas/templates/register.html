@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" media="all">
+</head>
+<body>
+    <h1 class="title-agile text-center">Register</h1>
+    <div class="content-w3ls">
+        <div class="content-bottom">
+	    <h2>Register Here <i class="fa fa-hand-o-down" aria-hidden="true"></i></h2>
+            <form action="register" method="post">
+                {% csrf_token %}
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="first_name" type="text" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="last_name" type="text" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-users" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="username" type="text" placeholder="Username">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-envelope" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="email" type="email" value="" placeholder="Email">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="password1" type="text" placeholder="Password" >
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input name="password2" type="Password" placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="wthree-field">
+                    <input type="submit" value="Register" />
+                </div>
+				<div class="account">
+					<p class="text-center">Already have an account ? <a href="./login">Login</a></p>
+				</div>
+            </form>
+        </div>
+    </div>
+    <div class="copyright text-center">
+        <p>© 2020 Register for Medical Cite. All rights reserved | Design by Medical Cite</p>
+    </div>
+</body>
+<!-- //Body -->
+</html>

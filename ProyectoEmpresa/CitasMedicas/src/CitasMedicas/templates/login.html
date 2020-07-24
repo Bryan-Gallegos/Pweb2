@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}" type="text/css" media="all">
+</head>
+<body>
+    <form class="login-form" method="POST" action="login">
+      {% csrf_token %}
+      <p class="login-text">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-lock"></i>
+        </span>
+      </p>
+      <input type="text" class="login-username" autofocus="true" name="username" placeholder="Username" />
+      <input type="password" class="login-password" name="password" placeholder="Password" />
+      <input type="submit" name="Login" value="Login" class="login-submit" />
+    </form>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div> 
+    <div>
+      {% for message in message %}
+      <h3>{{message}}</h3>
+      {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>B&J Clinicas de la Salud</title>
+    <link rel="icon" href="static/img/favicon.png">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href=""> <img src="{% static 'img/logo.png' %}" alt="logo"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="">Inicio</a>
+                                </li>
+                                {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link">Hola, {{user.first_name}}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accounts/logout">Cerrar Sesion</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accounts/about">Acerca de nosotros</a>
+                                </li>
+                                {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accounts/login">Iniciar Sesion</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accounts/register">Registrate</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="accounts/about">Acerca de nosotros</a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="banner_part">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-xl-6">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h1>Trayendo el futuro de la 
+                            asistencia medica</h1>
+                            <p>Una prueba mínimamente invasiva que se realiza en una muestra de sangre para identificar células cancerosas tumorales o ADN de células tumorales que están circulando en la sangre. Puede ser útil para diagnosticar un cáncer en fase temprana y para planificar el tratamiento en función del tipo de tumor, determinar su eficacia y detectar una recaída. Se trata de un procedimiento sencillo, que evita trastornos al paciente y que representa un ahorro de tiempo  </p>
+                            <a href="#" class="btn_2">Pide tu cita ahora!</a>
+                            <div class="banner_item">
+                                <div class="single_item">
+                                    <img src="{% static 'img/icon/banner_1.svg' %}" alt="">
+                                    <h5>Casos de emergencia</h5>
+                                </div>
+                                <div class="single_item">
+                                    <img src="{% static 'img/icon/banner_2.svg' %}" alt="">
+                                    <h5>Cita fácil</h5>
+                                </div>
+                                <div class="single_item">
+                                    <img src="{% static 'img/icon/banner_3.svg' %}" alt="">
+                                    <h5>Doctores capacitados</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="feature_part padding_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-md-4 align-self-center">
+                    <div class="single_feature_text ">
+                        <h2>Proporcionamos 
+                        Servicios Especiales</h2>
+                        <p>Nuestro amplio prestigio hacen de esta clinica la mas reconocida de la UNSA, y ser una de las mejores en todo el pais, por ello nuestros centros estan preparados para todo, desde una quemadura de grado 1 hasta una epidemia contando actualmente con 250 camas UCI repartidas en todas nuestras sucursales listas para su uso</p>
+                        <a href="#" class="btn_2">Mas servicios ...</a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="feature_item">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="{% static 'img/icon/feature_1.svg' %}"
+                                                alt=""></span>
+                                        <h4>Saliva e implantes dentales</h4>
+                                        <p>De las propiedades antisépticas y cicatrizantes de la saliva hace tiempo que se tiene noticia. Lo novedoso es que un equipo de investigadores de la Universidad de Chile ha descubierto la molécula que acelera la cicatrización y que estimula la creación de vasos sanguíneos: se trata de la que la histanina-1.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="{% static 'img/icon/feature_2.svg' %}"
+                                                alt=""></span>
+                                        <h4>Reduccion de ceguera</h4>
+                                        <p>La revista ‘Biomedical Optical Express’ acaba de presentar este gran avance tecnológico que posibilita un tratamiento quirúrgico contra la primera causa de pérdida total de la vista en mayores de 55 años. Los minitelescopios iolAMD, diseñados por el equipo del catedrático Pablo Artal en colaboración con el Dr. Qureshi del London Eye Hospital Pharma, se implantan en diez minutos y sin necesidad de suturas al ser los primeros fabricados con un material flexible.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="{% static 'img/icon/feature_2.svg' %}"
+                                                alt=""></span>
+                                        <h4>Prevencion de la Perdida de Vista</h4>
+                                        <p>La semana pasada, el oftalmólogo Jordi Monés afirmó "estar entusiasmado" con las perspectivas que abre la investigación con células madre susceptible de permitir futuras nuevas terapias para tratar problemas de grave pérdida de visión".
+										Monés está "impresionado" con los avances, especialmente los publicados en octubre pasado por la revista científica The Lancet, que muestran el desarrollo de células madre en pacientes y que ponen de manifiesto la eficacia y seguridad de ese tipo de terapia.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-6">
+                                <div class="single_feature">
+                                    <div class="single_feature_part">
+                                        <span class="single_feature_icon"><img src="{% static 'img/icon/feature_1.svg' %}"
+                                                alt=""></span>
+                                        <h4>Uso de MAgnesio en Osteointegracion</h4>
+                                        <p>Puede el magnesio estimular la osteointegración en pacientes con problemas de osteoporosis? Los primeros resultados de una investigación llevada a cabo en la Universidad de Malmoe, Suecia, así lo indican. Al parecer el uso de magnesio soluble en favorece la regenaración ósea en los primeros días del implante, dando lugar a la aparición de calcio y fosfato muy similares a la estructura ósea..</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="our_ability section_padding">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-6 col-lg-6">
+                    <div class="our_ability_img">
+                        <img src="{% static 'img/ability_img.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-5">
+                    <div class="our_ability_member_text">
+                        <h2>Los pacientes como nucleo de todo nuestro trabajo</h2>
+                        <p>A pesar de que hay diferencias entre la sanidad pública y la privada (no vamos a entrar ahora a analizar las distintas aproximaciones de ambas a las estrategias de negocio), lo que indudablemente sí comparten, es la constante presencia de las relaciones personales. Los actos médicos y todo aquello que los rodean, son momentos puramente emocionales. Si algún sector sabe -o debería- de humanización, de generar emociones, es sin duda el sanitario. Hace poco vimos en noticias a una persona afirmar que él había entendido lo que significaba la palabra “miedo” cuando vio cómo bajaban a su hijo a un quirófano. El miedo es una emoción básica o primaria, y a estas alturas, ya muchos conocemos la definición de la Experiencia de Cliente, que afirma que “es la emoción que se genera en la mente del consumidor como consecuencia de su relación con la entidad”. De aquí que B&J Clinica de la Salud se preocupa por cada uno de sus pacientes, dandole el mismo grado de importancia sin excepcion, ademas de contar tambien con areas verdes que promueven la relajacion y dando un ambiente de tranquilidad no solo al paciente, sino tambien a sus familiares.</p>
+                        <ul>
+                            <li><span class="ti-mouse"></span>Lo ultimo en tecnologia</li>
+                            <li><span class="ti-heart-broken"></span>Ambientes con estandares Internacionales</li>
+                            <li><span class="ti-package"></span>Personal Altamente Capacitado</li>
+                            <li><span class="ti-headphone-alt"></span>24/7 H Atencion Medica</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our_ability part end-->
+
+    <!-- top_service part start-->
+    <section class="top_service our_ability padding_bottom">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md-5 col-lg-5">
+                    <div class="our_ability_member_text">
+                        <h2>Analizamos sus estados de salud para ofrecer un servicio superior</h2>
+                        <p>Hace poco, el doctor Perez Alvela, dio a conocer en un conocido medio de radio que para poder tratar a una persona en una terapia o una enfermedad, era indispensable saber las condiciones en la que esta persona esta, siendo un importante factor su edad, asi como su historia Clinica.
+                        Aqui en B&J Clinicas de la Salud nos preocupamos por ti y sabemos que estos factores haran que tengas un mejor cuidado por parte de nuestro personal dandonos un valor agregado que muy pocas clinicas poseen .</p>
+                        <a href="#" class="btn_2">Leer mas ....</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6">
+                    <div class="our_ability_img">
+                        <img src="{% static 'img/top_service.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="doctor_part section_padding">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section_tittle text-center">
+                        <h2>Doctores Especializados</h2>
+                        <p>Toda nuestra plana de doctores han realizado capacitaciones a nivel no solo de America, sino tambien en Europa</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for doc in docs %}
+                <div class="col-sm-6 col-lg-3">
+                    <div class="single_blog_item">
+                        <div class="single_blog_img">
+                            <img src="{{doc.img.url}}" alt="doctor">
+                        </div>
+                        <div class="single_text">
+                            <div class="single_blog_text">
+                                <h3>DR {{doc.name}} {{doc.last_name}}</h3>
+                                <p>{{doc.specialty}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <footer class="footer-area">    
+        <div class="copyright_part">
+            <div class="container">
+                <div class="row align-items-center">
+                    <p class="footer-text m-0 col-lg-8 col-md-12">© 2020 B&J Clinicas de la Salud . Todos los derechos reservados | Design by Bryan Gallegos and Jimy Revilla</p>
+                    <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'js/jquery.form.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/mail-script.js' %}"></script>
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

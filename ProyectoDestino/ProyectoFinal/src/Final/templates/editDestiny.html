@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Destiny</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/destinos.css' %}">
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="hidden" name="textid" id="textid" value="{{data.id}}">
+        <input type="text" name="Name" placeholder="Nombre del destino" value="{{data.name}}"><br>
+        <input type="file" name="Direccion" ><br>
+        <textarea name="Descripcion"  cols="30" rows="4" placeholder="Descripcion del lugar">{{data.desc}}</textarea><br>
+        <input type="number" name="Precio" placeholder="Precio" value="{{data.price}}"><br>
+        <input type="checkbox" name="Oferta" >
+        <label> Offer</label><br>
+        <input type="submit" value="Modificar">
+    </form>
+
+</body>
+</html>

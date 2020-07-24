@@ -1,0 +1,35 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Destiny</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/destinos.css' %}">
+</head>
+<body>
+    <div class=tapa>
+        <h1>Travello</h1>
+    </div>
+    <div class="box">
+        <h2>Destiny</h2>
+        <h3>{{objeto.name}}</h3>
+        <h3>{{objeto.desc}}</h3>
+        <img src="{{objeto.img.url}}" alt="">
+        {% if objeto.offer %}
+        <h3>With Especial Offer</h3>
+        {% else %}
+        <h3>No Especial Offer</h3>
+		{% endif %}
+        <h3>Price of {{objeto.price}}</h3>
+        
+    </div>
+    <div>
+        {% for message in message %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
