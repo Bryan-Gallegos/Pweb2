@@ -1,12 +1,33 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from cita.models import Cite
+from cita.models import Cite, Doctor
 from django.contrib.auth.models import User,auth
 
 # Create your views here.
 
+def modificate(request):
+    return 3
+
+def add(request):
+    print('crear imagen')
+    if request.method=='POST':
+        print('creando doctor')
+        Name=request.POST['name']
+        Last_name=request.POST['last_name']
+        Foto="pics/"+request.POST['img']
+        Esp=request.POST['especialty']
+        Cod=request.POST['code']
+        print(Name)
+        print(Last_name)
+        print(Esp)
+        imgs=Doctor.objects.create(name=Name,last_name=Last_name,img=Foto,specialty=Esp,code=Cod)
+        imgs.save()
+        print('doctor agregado')
+        docs=Doctor.objects.all()
+    return render(request,'add.html',{})
+
 def manage(request):
-    return render(request,'manager.html',{})
+    return render(request,'manage.html',{})
 
 def login(request):
     if request.method=='POST':
