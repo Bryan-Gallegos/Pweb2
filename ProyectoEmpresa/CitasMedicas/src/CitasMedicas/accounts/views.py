@@ -4,6 +4,7 @@ from cita.models import Cite, Doctor
 from django.contrib.auth.models import User,auth
 
 # Create your views here.
+<<<<<<< HEAD
 
 def modificate(request):
     return 3
@@ -29,6 +30,8 @@ def add(request):
 def manage(request):
     return render(request,'manage.html',{})
 
+=======
+>>>>>>> 36cb8f81cec0887c69b339e53e74e5be5fe53e90
 def login(request):
     if request.method=='POST':
         username=request.POST['username']
