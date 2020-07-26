@@ -12,11 +12,12 @@
     
 }
 p{
-    color: blue;
-    font-family: 'Open Sans';
-    font-size: 30;
+    color: rgb(46, 170, 153);
+    font-family: 'Century Gothic';
+    font-size: 30px;
 }
 body{
+    align-items: right;
     font-family: 'Open Sans';
     background: url("https://image.freepik.com/vector-gratis/diseno-plantilla-papel-tapiz-medica-abstracta_53876-61802.jpg") no-repeat center center fixed;
     background-size: cover;

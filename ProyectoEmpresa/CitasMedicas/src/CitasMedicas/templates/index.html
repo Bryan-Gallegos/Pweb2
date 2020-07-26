@@ -38,14 +38,14 @@
                                     <a class="nav-link" href="">Inicio</a>
                                 </li>
                                 {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link">Hola, {{user.first_name}}</a>
+                                </li>
                                 {% if user.name == jimy %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="accounts/manage">Gestionar</a>
                                 </li>
                                 {% endif %}
-                                <li class="nav-item">
-                                    <a class="nav-link">Hola, {{user.first_name}}</a>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="accounts/logout">Cerrar Sesion</a>
                                 </li>
@@ -221,11 +221,11 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_blog_item">
                         <div class="single_blog_img">
-                            <img src="{{doc.img.url}}" alt="doctor">
+                            <img src="{{doc.img.url}}" alt="doctor" width="300" height="400">
                         </div>
                         <div class="single_text">
                             <div class="single_blog_text">
-                                <h3>DR {{doc.name}} {{doc.last_name}}</h3>
+                                <h3>Dr. {{doc.name}} {{doc.last_name}}</h3>
                                 <p>{{doc.specialty}}</p>
                             </div>
                         </div>
