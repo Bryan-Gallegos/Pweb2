@@ -39,7 +39,7 @@ def login(request):
         if user is not None:
             auth.login(request,user)
             subject="Iniciaste sesion en B&J"
-            message=""
+            message="Acabas de iniciar sesion en B&J clinicas de la salud, ven y separa tu cita en la especialidad que desees"
             email_from=settings.EMAIL_HOST_USER
             recipient_list=[user.email]
             send_mail(subject,message,email_from,recipient_list,)
