@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from cita.models import Cite, Doctor
 from django.contrib.auth.models import User,auth
+from django.core.mail import send_mail
+from django.conf import settings
 
 # Create your views here.
-<<<<<<< HEAD
 
 def modificate(request):
     return 3
@@ -30,8 +31,6 @@ def add(request):
 def manage(request):
     return render(request,'manage.html',{})
 
-=======
->>>>>>> 36cb8f81cec0887c69b339e53e74e5be5fe53e90
 def login(request):
     if request.method=='POST':
         username=request.POST['username']
@@ -39,6 +38,11 @@ def login(request):
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)
+            subject="Iniciaste sesion en B&J"
+            message=""
+            email_from=settings.EMAIL_HOST_USER
+            recipient_list=[user.email]
+            send_mail(subject,message,email_from,recipient_list,)
             return redirect('/')
         else:
             messages.info(request,'Contraseña invalida')
@@ -64,6 +68,11 @@ def register(request):
             else:
                 user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
                 user.save()
+                subject="Registro Completo"
+                message="Felicidades "+user.first_name+", acabas de registrarte en B&J Clinicas de la Salud, saca una cita ahora y obten hasta un 70% de descuento en tu proxima consulta"
+                email_from=settings.EMAIL_HOST_USER
+                recipient_list=[user.email]
+                send_mail(subject,message,email_from,recipient_list,)
                 return redirect('login')
         else:
             messages.info(request,'Contraseña invalida')
