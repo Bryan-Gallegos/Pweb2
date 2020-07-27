@@ -69,7 +69,7 @@ def register(request):
                 user=User.objects.create_user(username=username,password=password1,email=email,first_name=first_name,last_name=last_name)
                 user.save()
                 subject="Registro Completo"
-                message="Felicidades "+user.first_name+", acabas de registrarte en B&J Clinicas de la Salud, saca una cita ahora y obten hasta un 70% de descuento en tu proxima consulta"
+                message="Felicidades "+user.first_name+", acabas de registrarte en B&J Clinicas de la Salud, saca una cita ahora y obten hasta un 70% de descuento en tu proxima consulta, ven y conoce nuestras nuevas especialidades"
                 email_from=settings.EMAIL_HOST_USER
                 recipient_list=[user.email]
                 send_mail(subject,message,email_from,recipient_list,)
