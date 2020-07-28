@@ -11,8 +11,8 @@
     <CENTER>
     <h1>Doctores actualmente contratados</h1>
     {% for doc in doctors %}
-    <h1>{{doc.name}}</h1>
-    <a href="ver_contrato/{{ doc.id }}" class="boton">Ver su contrato </a><br><br>
+    <h1>{{doc.name}}</h1><a href="ver_contrato/{{ doc.id }}" class="boton">Ver su contrato </a><br><br>
+    
     {% endfor %}
     </CENTER>
 </body>
