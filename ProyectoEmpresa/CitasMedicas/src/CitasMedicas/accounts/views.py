@@ -1,14 +1,50 @@
+import io
+from django.http import FileResponse
+from reportlab.pdfgen import canvas
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from cita.models import Cite, Doctor
 from django.contrib.auth.models import User,auth
 from django.core.mail import send_mail
 from django.conf import settings
+from xhtml2pdf import pisa
+from django.template.loader import get_template
+from django.http import HttpResponse
+from io import StringIO, BytesIO
 
 # Create your views here.
 
-def modificate(request):
-    return 3
+def otro_pdf(request):
+    all_doctors=Doctor.objects.all()
+    data={'doctors':all_doctors}
+    template=get_template("pdf_page.html")
+    data_p=template.render(data)
+    response=BytesIO()
+    pdfPage=pisa.pisaDocument(BytesIO(data_p.encode("UTF-8")),response)
+    if not pdfPage.err:
+        return HttpResponse(response.getvalue(),content_type="application/pdf")
+    else:
+        return HttpResponse("Error Generating PDF")
+
+def create_Pdf(request):
+     # Create a file-like buffer to receive PDF data.
+    buffer = io.BytesIO()
+
+    # Create the PDF object, using the buffer as its "file."
+    p = canvas.Canvas(buffer)
+
+    # Draw things on the PDF. Here's where the PDF generation happens.
+    # See the ReportLab documentation for the full list of functionality.
+    p.drawString(100, 100, "Hello world.")
+
+    # Close the PDF object cleanly, and we're done.
+    p.showPage()
+    p.save()
+
+    # FileResponse sets the Content-Disposition header so that browsers
+    # present the option to save the file.
+    buffer.seek(0)
+    return FileResponse(buffer, as_attachment=True, filename='PlanillaB&J.pdf')
 
 def add(request):
     print('crear imagen')
