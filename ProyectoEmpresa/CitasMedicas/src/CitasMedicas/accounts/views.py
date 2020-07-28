@@ -13,6 +13,18 @@ from django.http import HttpResponse
 from io import StringIO, BytesIO
 
 # Create your views here.
+def ver_contrato(request,id):
+    select_doctor=Doctor.objects.get(id=id)
+    data={'doctor':select_doctor}
+    template=get_template("contrato.html")
+    data_p=template.render(data)
+    response=BytesIO()
+    pdfPage=pisa.pisaDocument(BytesIO(data_p.encode("UTF-8")),response)
+    if not pdfPage.err:
+        return HttpResponse(response.getvalue(),content_type="application/pdf")
+    else:
+        return HttpResponse("Error Generating PDF")
+
 def show_doctors(request):
     doctors=Doctor.objects.all()
     return render(request,'show_doctors.html',{'doctors':doctors})
