@@ -1,0 +1,11 @@
+body{
+    align-items: right;
+    font-family: 'Open Sans';
+    background: url("https://image.freepik.com/foto-gratis/espacio-trabajo-minimo-foto-plana-estable-creativa-escritorio-espacio-trabajo-tarjeta-visita-pantalla-blanco-sobre-fondo-blanco-espacio-copia-vista-superior-fotografia-plana_1253-1212.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+h1{
+    color: rgb(37, 73, 68);
+    font-family: 'Century Gothic';
+    font-size: 30px;
+}

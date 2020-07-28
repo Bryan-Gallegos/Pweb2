@@ -11,6 +11,19 @@
     background-color:#67e1e6;
     
 }
+.a {
+    border: transparent;
+    text-decoration:none;
+    font-weight:6000;
+    font-size:20px;
+    color:#ffffff;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    background-color:#67e1e6;
+    
+}
 p{
     color: rgb(46, 170, 153);
     font-family: 'Century Gothic';

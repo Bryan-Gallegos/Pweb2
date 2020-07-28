@@ -13,6 +13,9 @@ from django.http import HttpResponse
 from io import StringIO, BytesIO
 
 # Create your views here.
+def show_doctors(request):
+    doctors=Doctor.objects.all()
+    return render(request,'show_doctors.html',{'doctors':doctors})
 
 def otro_pdf(request):
     all_doctors=Doctor.objects.all()
