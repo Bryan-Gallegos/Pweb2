@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Planilla B&J Clinicas de la Salud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/show_doctors.css' %}">
+</head>
+<body>
+    <CENTER>
+    <h1>Doctores actualmente contratados</h1>
+    {% for doc in doctors %}
+    <h1>{{doc.name}}</h1>
+    <a href="/{{doc.id}}" class="boton">Eliminar </a><br><br>
+    {% endfor %}
+    </CENTER>
+</body>
+</html>

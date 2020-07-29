@@ -13,6 +13,10 @@ from django.http import HttpResponse
 from io import StringIO, BytesIO
 
 # Create your views here.
+
+def delete_page(request):
+    doctors=Doctor.objects.all()
+    return render(request,'delete_page.html',{'doctors':doctors})
 def ver_contrato(request,id):
     select_doctor=Doctor.objects.get(id=id)
     data={'doctor':select_doctor}

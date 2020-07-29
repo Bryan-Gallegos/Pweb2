@@ -12,4 +12,5 @@ urlpatterns=[
     path('otro_pdf',views.otro_pdf,name='otro_pdf'),
     path('show_doctors',views.show_doctors,name='show_doctors'),
     path('ver_contrato/<int:id>',views.ver_contrato,name='ver_contrato'),
+    path('delete_page',views.delete_page,name='delete_page'),
 ]
