@@ -1,11 +1,11 @@
 label{
-    color: darkblue;
+    color: rgb(99, 99, 177);
     font-family: 'Century Gothic';
     text-align: left;
     font-size: 30px;
 }
 body{
-    background: url("https://images3.alphacoders.com/101/thumb-1920-1010294.jpg") no-repeat center center fixed;
+    background: url("https://image.freepik.com/foto-gratis/fondo-textura-madera-degradado-oscuro_1258-855.jpg") no-repeat center center fixed;
     background-size: cover;
 }input{
     border-radius: 5px;
