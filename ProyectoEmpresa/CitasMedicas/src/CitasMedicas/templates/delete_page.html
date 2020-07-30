@@ -12,7 +12,7 @@
     <h1>Doctores actualmente contratados</h1>
     {% for doc in doctors %}
     <h1>{{doc.name}}</h1>
-    <a href="/{{doc.id}}" class="boton">Eliminar </a><br><br>
+    <a href="delete_obj/{{doc.id}}" class="boton">Eliminar </a><br><br>
     {% endfor %}
     </CENTER>
 </body>
