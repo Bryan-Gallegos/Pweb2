@@ -14,6 +14,11 @@ from io import StringIO, BytesIO
 
 # Create your views here.
 
+def delete_obj(request,id):
+    obj=Doctor.objects.get(id=id)
+    obj.delete()
+    return redirect('/')
+
 def delete_page(request):
     doctors=Doctor.objects.all()
     return render(request,'delete_page.html',{'doctors':doctors})
