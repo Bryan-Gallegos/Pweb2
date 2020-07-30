@@ -1,0 +1,18 @@
+label{
+    color: darkblue;
+    font-family: 'Century Gothic';
+}
+body{
+    background: url("https://images3.alphacoders.com/101/thumb-1920-1010294.jpg") no-repeat center center fixed;
+    background-size: cover;
+}input{
+    border-radius: 5px;
+   border: 1px solid #39c;
+    border-color: darkgray;
+    font-family: 'Century Gothic';
+    height: 25px;
+    outline: none;
+   background-color: rgb(237, 237, 246);
+   size:"80";
+    
+}
