@@ -8,17 +8,28 @@
     <link rel="stylesheet" href="{% static 'css/add.css' %}">
 </head>
 <body>
-        <div class="add">
+    <CENTER>
+        <div id="wrapper" class="add">
             <form action="add" method="POST">
-                {%csrf_token%}
-                <label>Nombre: </label><input type="text" name="name" placeholder="Inserte aqui el nombre"><br>
-                <label>Apellido: </label><input type="text" name="last_name" placeholder="Inserte aqui el apellido"><br>
-                <label>Foto: </label><input type="file" name="img"><br>
-                <label>Especialidad: </label><input type="text" name="especialty" placeholder="Inserte aqui el Especialidad"><br>
-                <label>Codigo: </label><input type="text" name="code" placeholder="Inserte aqui el codigo"><br>
-                <br>
-                <input type="submit" value="añadir">
+                    {%csrf_token%}
+                    <div>
+                        <label>Nombre: </label><br><input type="text" name="name" placeholder="Inserte aqui el nombre"><br>
+                    </div>
+                    <div>
+                        <label>Apellido: </label><br><input type="text" name="last_name" placeholder="Inserte aqui el apellido"><br>
+                    </div>
+                    <div>
+                        <label>Foto: </label><br><input type="file" name="img" placeholder="Selecciona aqui"><br>
+                    </div>
+                    <div>
+                        <label>Especialidad: </label><br><input type="text" name="especialty" placeholder="Inserte aqui el Especialidad"><br>
+                    </div>
+                    <div>
+                        <label>Codigo: </label><br><input type="text" name="code" placeholder="Inserte aqui el codigo" maxlength="5"><br>
+                    </div><br>
+                    <input type="submit" value="AÑADIR">  
             </form>
         </div>
+    </CENTER>
 </body>
 </html>
