@@ -1,4 +1,4 @@
-.boton {
+boton {
     border: transparent;
     text-decoration:none;
     font-weight:6000;
@@ -11,7 +11,7 @@
     background-color:#67e1e6;
     
 }
-.a {
+a {
     border: transparent;
     text-decoration:none;
     font-weight:6000;
@@ -21,7 +21,7 @@
     padding-bottom:15px;
     padding-left:150px;
     padding-right:150px;
-    background-color:#67e1e6;
+    font-family: 'Century Gothic';
     
 }
 p{
@@ -30,8 +30,7 @@ p{
     font-size: 30px;
 }
 body{
-    align-items: right;
-    font-family: 'Open Sans';
-    background: url("https://image.freepik.com/vector-gratis/diseno-plantilla-papel-tapiz-medica-abstracta_53876-61802.jpg") no-repeat center center fixed;
+    background-image: url("https://i.pinimg.com/originals/a8/ed/ef/a8edef88be550e6922e5aa0fc01f9ff0.jpg" )no-repeat center center fixed;
     background-size: cover;
+   
 }
