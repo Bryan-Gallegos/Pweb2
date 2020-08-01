@@ -5,11 +5,11 @@
     <title>Panel de Control B&J</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% static 'css/manage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new_manage.css' %}">
 </head>
 <body>
     <CENTER>
-    <p>Buen dia ing. {{ user.first_name }}<br>Que puedo hacer por ti hoy?</p>
+    <p>Buen dia ing. {{ user.first_name }} {{ user.last_name }}<br>Que puedo hacer por ti hoy?</p>
     <div>
     <a href="add" class="boton">Insertar</a><br><br>
     </div>
