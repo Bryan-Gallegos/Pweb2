@@ -1,3 +1,7 @@
+body{
+    background: url("https://image.freepik.com/foto-gratis/fondo-textura-madera-degradado-oscuro_1258-855.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
 boton {
     border: transparent;
     text-decoration:none;
@@ -28,9 +32,4 @@ p{
     color: rgb(46, 170, 153);
     font-family: 'Century Gothic';
     font-size: 30px;
-}
-body{
-    background-image: url("https://i.pinimg.com/originals/a8/ed/ef/a8edef88be550e6922e5aa0fc01f9ff0.jpg" )no-repeat center center fixed;
-    background-size: cover;
-   
 }

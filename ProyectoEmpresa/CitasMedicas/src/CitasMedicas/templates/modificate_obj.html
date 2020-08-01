@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>B&J Añadir Doctor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+</head>
+<body>
+    <CENTER>
+        <div id="wrapper" class="add">
+            <form action="add" method="POST">
+                    {%csrf_token%}
+                    <div>
+                        <label>Nombre: </label><br><input type="text" name="name" placeholder="Inserte aqui el nombre" value="{{ doc.name }}"><br>
+                    </div>
+                    <div>
+                        <label>Apellido: </label><br><input type="text" name="last_name" placeholder="Inserte aqui el apellido" value="{{ doc.last_name }}"><br>
+                    </div>
+                    <div>
+                        <label>Foto: </label><br><input type="file" name="img" placeholder="{{ doc.img }}" value="{{ doc.img }}" id=><br>
+                    </div>
+                    <div>
+                        <label>Especialidad: </label><br><input type="text" name="especialty" placeholder="Inserte aqui el Especialidad" value="{{ doc.specialty }}"><br>
+                    </div>
+                    <div>
+                        <label>Codigo: </label><br><input type="text" name="code" placeholder="Inserte aqui el codigo" maxlength="5" value="{{ doc.code }}"><br>
+                    </div><br>
+                    <input type="submit" value="AÑADIR">  
+            </form>
+        </div>
+    </CENTER>
+</body>
+</html>

@@ -8,10 +8,10 @@ urlpatterns=[
     path('about',views.about,name='about'),
     path('manage',views.manage,name='manage'),
     path('add',views.add,name='add'),
-    path('create_Pdf',views.create_Pdf,name='create_Pdf'),
     path('otro_pdf',views.otro_pdf,name='otro_pdf'),
     path('show_doctors',views.show_doctors,name='show_doctors'),
     path('ver_contrato/<int:id>',views.ver_contrato,name='ver_contrato'),
     path('delete_page',views.delete_page,name='delete_page'),
     path('delete_obj/<int:id>',views.delete_obj,name='delete_obj'),
+    path('modificate_obj/<int:id>',views.modificate_obj,name='modificate_obj'),
 ]

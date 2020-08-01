@@ -11,8 +11,11 @@
     <CENTER>
     <h1>Doctores actualmente contratados</h1>
     {% for doc in doctors %}
-    <h1>{{doc.name}}</h1>
-    <a href="delete_obj/{{doc.id}}" class="boton">Eliminar </a><br><br>
+    <fieldset>
+        <h1>{{doc.name}}</h1>
+        <a href="delete_obj/{{doc.id}}" class="boton">Eliminar </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="modificate_obj/{{doc.id}}" class="boton1" style="color: rgb(73, 155, 26);">Modificar </a>
+    </fieldset><br>
     {% endfor %}
     </CENTER>
 </body>
