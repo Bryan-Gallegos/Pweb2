@@ -21,7 +21,7 @@ def make_appointment_page(request):
     espec=[""+doc.specialty for doc in prueba]
     espec=list(OrderedDict.fromkeys(espec))
     print(espec)
-    return render(request,'specialty_page.html',{'specialty':espec})
+    return render(request,'specialty_page.html',{'spec':espec})
 def modificate_obj(request,id):
     doc=Doctor.objects.get(id=id)
     return render(request,'modificate_obj.html',{'doc':doc})

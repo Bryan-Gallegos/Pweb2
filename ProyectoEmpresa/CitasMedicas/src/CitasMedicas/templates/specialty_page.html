@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Escoja Especialidad</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/show_doctors.css' %}">
+</head>
+<body>
+    <CENTER>
+    <h1>Escoja la especialidad en la que desea atenderse</h1>
+    {% for spe in spec %}
+    <a href="sacar_cita/spe" class="boton">{{ spe }} </a><br><br>
+    {% endfor %}
+    </CENTER>
+</body>
+</html>
