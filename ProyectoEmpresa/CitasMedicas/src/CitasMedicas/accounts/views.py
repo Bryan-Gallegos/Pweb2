@@ -15,9 +15,13 @@ from io import StringIO, BytesIO
 # Create your views here.
 
 def make_appointment_page(request):
-    prueba=Doctor.objects.filter(specialty!=null)
+    prueba=Doctor.objects.all()
     print(prueba)
-    return HttpResponse(request,"<h1>A ver revisa el visual</h1>",{})
+    arr
+    for doc in prueba:
+        arr+=doc.specialty
+    print(arr)
+    return HttpResponse("<h1>A ver revisa el visual</h1>")
 
 def modificate_obj(request,id):
     doc=Doctor.objects.get(id=id)
