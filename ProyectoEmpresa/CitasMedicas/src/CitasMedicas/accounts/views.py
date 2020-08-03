@@ -11,21 +11,17 @@ from xhtml2pdf import pisa
 from django.template.loader import get_template
 from django.http import HttpResponse
 from io import StringIO, BytesIO
+from collections import OrderedDict
 
 # Create your views here.
 
 def make_appointment_page(request):
     prueba=Doctor.objects.all()
     print(prueba)
-    arr=[]
-    for doc in prueba:
-        spec=doc.specialty
-        print(spec)
-        arr+=str(spec)
-    print(arr[0])
-    print(len(arr))
-    return HttpResponse("<h1>A ver revisa el visual</h1>")
-
+    espec=[""+doc.specialty for doc in prueba]
+    espec=list(OrderedDict.fromkeys(espec))
+    print(espec)
+    return render(request,'specialty_page.html',{'specialty':espec})
 def modificate_obj(request,id):
     doc=Doctor.objects.get(id=id)
     return render(request,'modificate_obj.html',{'doc':doc})
