@@ -13,6 +13,12 @@ from django.http import HttpResponse
 from io import StringIO, BytesIO
 
 # Create your views here.
+
+def make_appointment_page(request):
+    prueba=Doctor.objects.filter(specialty!=null)
+    print(prueba)
+    return HttpResponse(request,"<h1>A ver revisa el visual</h1>",{})
+
 def modificate_obj(request,id):
     doc=Doctor.objects.get(id=id)
     return render(request,'modificate_obj.html',{'doc':doc})
