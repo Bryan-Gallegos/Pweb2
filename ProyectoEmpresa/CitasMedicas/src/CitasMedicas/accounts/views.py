@@ -17,10 +17,13 @@ from io import StringIO, BytesIO
 def make_appointment_page(request):
     prueba=Doctor.objects.all()
     print(prueba)
-    arr
+    arr=[]
     for doc in prueba:
-        arr+=doc.specialty
-    print(arr)
+        spec=doc.specialty
+        print(spec)
+        arr+=str(spec)
+    print(arr[0])
+    print(len(arr))
     return HttpResponse("<h1>A ver revisa el visual</h1>")
 
 def modificate_obj(request,id):
