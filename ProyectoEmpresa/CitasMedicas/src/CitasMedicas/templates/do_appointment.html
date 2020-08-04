@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Saca tu cita ahora</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/do_appointment.css' %}">
+</head>
+<body>
+    <CENTER>
+        <div id="wrapper" class="add">
+            <form action="add" method="POST">
+                    {%csrf_token%}
+                    <input type="text" name="u" placeholder="Username" required="required" />
+                    <input type="password" name="p" placeholder="Password" required="required" />
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+            </form>
+        </div>
+    </CENTER>
+    <div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Saca tu cita</h1>
+			</div>
+            <form  method="POST">
+                {%csrf_token%}
+			<div class="login-form">
+				<div class="control-group">
+				
+                <div>
+                    <input type="text" name="name" placeholder="Inserte aqui tu nombre" disabled>
+                </div>
+
+				<a class="btn btn-primary btn-large btn-block" href="#">login</a>
+				<a class="login-link" href="#">Lost your password?</a>
+            </div>
+        </form>
+		</div>
+	</div>
+</body>
+</html>
