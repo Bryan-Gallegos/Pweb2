@@ -14,6 +14,8 @@ from io import StringIO, BytesIO
 from collections import OrderedDict
 
 # Create your views here.
+def do_appointment(request,area):
+    return render(request,"do_appointment.html",{})
 
 def make_appointment_page(request):
     prueba=Doctor.objects.all()
