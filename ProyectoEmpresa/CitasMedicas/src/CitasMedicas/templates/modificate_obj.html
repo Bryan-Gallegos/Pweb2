@@ -5,7 +5,7 @@
     <title>B&J Añadir Doctor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new_manage.css' %}">
 </head>
 <body>
     <CENTER>
@@ -13,7 +13,7 @@
             <form action="add" method="POST">
                     {%csrf_token%}
                     <div>
-                        <label>Nombre: </label><br><input type="text" name="name" placeholder="Inserte aqui el nombre" value="{{ doc.name }}"><br>
+                        <label>Nombre: </label><br><input style="color: aqua;" type="text" name="name" placeholder="Inserte aqui el nombre" value="{{ doc.name }}"><br>
                     </div>
                     <div>
                         <label>Apellido: </label><br><input type="text" name="last_name" placeholder="Inserte aqui el apellido" value="{{ doc.last_name }}"><br>
