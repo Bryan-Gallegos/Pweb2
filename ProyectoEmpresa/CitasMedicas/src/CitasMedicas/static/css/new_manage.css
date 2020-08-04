@@ -1,35 +1,20 @@
-body{
-    background: url("https://articles-images.sftcdn.net/wp-content/uploads/sites/2/2017/05/38.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
-boton {
-    border: transparent;
-    text-decoration:none;
-    font-weight:6000;
-    font-size:20px;
-    color:#ffffff;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
-    background-color:#67e1e6;
-    
-}
-a {
-    border: transparent;
-    text-decoration:none;
-    font-weight:6000;
-    font-size:20px;
-    color:#ffffff;
-    padding-top:15px;
-    padding-bottom:15px;
-    padding-left:150px;
-    padding-right:150px;
+label{
+    color: rgb(99, 99, 177);
     font-family: 'Century Gothic';
-    
-}
-p{
-    color: rgb(46, 170, 153);
-    font-family: 'Century Gothic';
+    text-align: left;
     font-size: 30px;
+}
+body{
+    background: url("https://image.freepik.com/foto-gratis/fondo-textura-madera-degradado-oscuro_1258-855.jpg") no-repeat center center fixed;
+    background-size: cover;
+}input{
+    border-radius: 5px;
+    border: 1px solid #39c;
+    border-color: darkgray;
+    font-family: 'Century Gothic';
+    height: 40px;
+    width: 250px;
+    outline: none;
+    color:aqua;
+    background-color: inherit;
 }
