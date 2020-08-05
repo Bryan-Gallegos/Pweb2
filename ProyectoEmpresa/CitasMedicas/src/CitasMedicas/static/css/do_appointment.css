@@ -1,4 +1,12 @@
-* {
+* select {
+		background: transparent;
+		border: none;
+		font-size: 14px;
+		height: 30px;
+		padding: 5px;
+		width: 250px;
+	 }
+*{
 	box-sizing: border-box;
 	}
 	
@@ -76,3 +84,4 @@
 	  display: block;
 		margin-top: 12px;
 	}
+	

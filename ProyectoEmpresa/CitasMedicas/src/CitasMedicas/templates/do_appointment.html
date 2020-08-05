@@ -8,16 +8,6 @@
     <link rel="stylesheet" href="{% static 'css/do_appointment.css' %}">
 </head>
 <body>
-    <CENTER>
-        <div id="wrapper" class="add">
-            <form action="add" method="POST">
-                    {%csrf_token%}
-                    <input type="text" name="u" placeholder="Username" required="required" />
-                    <input type="password" name="p" placeholder="Password" required="required" />
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-            </form>
-        </div>
-    </CENTER>
     <div class="login">
 		<div class="login-screen">
 			<div class="app-title">
@@ -27,13 +17,32 @@
                 {%csrf_token%}
 			<div class="login-form">
 				<div class="control-group">
-				
                 <div>
-                    <input type="text" name="name" placeholder="Inserte aqui tu nombre" disabled>
+                    <input type="text" name="name" placeholder="Inserte aqui tu nombre" >
                 </div>
-
-				<a class="btn btn-primary btn-large btn-block" href="#">login</a>
-				<a class="login-link" href="#">Lost your password?</a>
+                <div>
+                    <input type="text" name="specialty" value="{{esp}}" disabled>
+                </div>
+                <div>
+                    <select name="select">
+                        <option value="value1" selected>Escoja al doctor</option> 
+                        {% for doc in doctors %}
+                        {% if doc.specialty == esp %}
+                        <option value="value1">{{doc.name}} {{doc.last_name}}</option>
+                        {% endif %}
+                        {% endfor %}
+                      </select>
+                </div>
+                <div>
+                    <input type="date" name=date>
+                </div>
+                <div>
+                    <input type="time" name="time">
+                </div>
+                <div>
+                    <input type="text" name="email" placeholder="Inserte aqui un correo" >
+                </div>
+                <input type="submit" value="Sacar Cita" style="background-color: dodgerblue;color: white;"> 
             </div>
         </form>
 		</div>

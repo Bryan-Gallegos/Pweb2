@@ -14,8 +14,14 @@ from io import StringIO, BytesIO
 from collections import OrderedDict
 
 # Create your views here.
+def make_appointment(request):
+    if request.method=='POST':
+        return redirect('/')
+
+
 def do_appointment(request,area):
-    return render(request,"do_appointment.html",{})
+    doctors=Doctor.objects.all()
+    return render(request,"do_appointment.html",{'esp':area,'doctors':doctors})
 
 def make_appointment_page(request):
     prueba=Doctor.objects.all()
@@ -141,3 +147,23 @@ def logout(request):
 
 def about(request):
     return render(request,'about.html')
+
+"""def loginDoctor(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+        usr=Doctor.objects.get(username=username,password=password)
+        if user is not None:
+            #ummm nose como combinarlo
+            subject="Doctor inició sesión en B&J"
+            message="Acaba de iniciar sesión en B&J clinicas de la salud, ven y mira cuales son sus citas programadas"
+            email_from=settings.EMAIL_HOST_USER
+            recipient_list=[usr.email]
+            send_mail(subject,message,email_from,recipient_list,)
+            return redirect('/')
+        else:
+            messages.info(request,'Contraseña invalida')
+            return redirect('login')
+    else:
+        return render(request,'login2.html')
+    """
