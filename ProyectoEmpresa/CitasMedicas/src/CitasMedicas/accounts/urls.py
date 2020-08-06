@@ -16,4 +16,5 @@ urlpatterns=[
     path('modificate_obj/<int:id>',views.modificate_obj,name='modificate_obj'),
     path('make_appointment_page',views.make_appointment_page,name='make_appointment_page'),
     path('do_appointment/<str:area>',views.do_appointment,name='do_appointment'),
+     path('make_appointment',views.make_appointment,name='make_appointment'),
 ]

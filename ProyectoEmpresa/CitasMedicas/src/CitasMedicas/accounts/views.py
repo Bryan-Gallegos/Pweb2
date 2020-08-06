@@ -12,10 +12,21 @@ from django.template.loader import get_template
 from django.http import HttpResponse
 from io import StringIO, BytesIO
 from collections import OrderedDict
+from datetime import date
+from datetime import datetime
 
 # Create your views here.
 def make_appointment(request):
     if request.method=='POST':
+        fecha=str(datetime.now())
+        hora=str(date.today())
+        print("Hora "+hora+"Hacer cita con los sgtes datos en la fecha "+fecha )
+        fecha_cita=request.POST['date']
+        time=request.POST['time']
+        print(fecha_cita)
+        select=request.POST['select']
+        email=request.POST['email']
+        print(select)
         return redirect('/')
 
 
