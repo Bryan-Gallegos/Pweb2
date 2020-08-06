@@ -13,35 +13,23 @@
 			<div class="app-title">
 				<h1>Saca tu cita</h1>
 			</div>
-            <form  method="POST">
+            <form  method="POST" action="\..\accounts/make_appointment">
                 {%csrf_token%}
 			<div class="login-form">
 				<div class="control-group">
-                <div>
                     <input type="text" name="name" placeholder="Inserte aqui tu nombre" >
-                </div>
-                <div>
                     <input type="text" name="specialty" value="{{esp}}" disabled>
-                </div>
-                <div>
-                    <select name="select">
-                        <option value="value1" selected>Escoja al doctor</option> 
+                    <select style="background-color: rgb(243, 243, 243) ;" name="select">
+                        <option selected>Escoja al doctor</option> 
                         {% for doc in doctors %}
                         {% if doc.specialty == esp %}
-                        <option value="value1">{{doc.name}} {{doc.last_name}}</option>
+                        <option value="{{doc.id}}">{{doc.name}} {{doc.last_name}}</option>
                         {% endif %}
                         {% endfor %}
                       </select>
-                </div>
-                <div>
                     <input type="date" name=date>
-                </div>
-                <div>
                     <input type="time" name="time">
-                </div>
-                <div>
-                    <input type="text" name="email" placeholder="Inserte aqui un correo" >
-                </div>
+                    <input type="text" name="email" placeholder="Inserte aqui un correo" ><br><br><br>
                 <input type="submit" value="Sacar Cita" style="background-color: dodgerblue;color: white;"> 
             </div>
         </form>
