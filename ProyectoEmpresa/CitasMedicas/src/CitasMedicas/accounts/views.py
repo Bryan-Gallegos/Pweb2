@@ -18,7 +18,7 @@ from datetime import datetime
 # Create your views here.
 def make_appointment(request):
     if request.method=='POST':
-        fecha=str(datetime.now())
+        fecha_actual=str(datetime.now())
         hora=str(date.today())
         print("Hora "+hora+"Hacer cita con los sgtes datos en la fecha "+fecha )
         fecha_cita=request.POST['date']
