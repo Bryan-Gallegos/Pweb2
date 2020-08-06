@@ -17,18 +17,18 @@
                 {%csrf_token%}
 			<div class="login-form">
 				<div class="control-group">
-                    <input type="text" name="name" placeholder="Inserte aqui tu nombre" >
-                    <input type="text" name="specialty" value="{{esp}}" disabled>
+                    <input type="text" name="name" placeholder="Inserte aqui tu nombre" ><br><br>
+                    <input type="text" name="especialidad" value="str({{esp}})" disabled><br><br>
                     <select style="background-color: rgb(243, 243, 243) ;" name="select">
-                        <option selected>Escoja al doctor</option> 
+                        <option selected>Escoja al doctor</option>
                         {% for doc in doctors %}
                         {% if doc.specialty == esp %}
                         <option value="{{doc.id}}">{{doc.name}} {{doc.last_name}}</option>
                         {% endif %}
                         {% endfor %}
                       </select>
-                    <input type="date" name=date>
-                    <input type="time" name="time">
+                      <br><br><input type="date" name=date><br><br>
+                    <input type="time" name="time"><br><br>
                     <input type="text" name="email" placeholder="Inserte aqui un correo" ><br><br><br>
                 <input type="submit" value="Sacar Cita" style="background-color: dodgerblue;color: white;"> 
             </div>

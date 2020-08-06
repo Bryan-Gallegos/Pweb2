@@ -18,15 +18,21 @@ from datetime import datetime
 # Create your views here.
 def make_appointment(request):
     if request.method=='POST':
-        fecha_actual=str(datetime.now())
-        hora=str(date.today())
-        print("Hora "+hora+"Hacer cita con los sgtes datos en la fecha "+fecha )
-        fecha_cita=request.POST['date']
+        fecha_actual=datetime.now()
+        #datos
+        name=request.POST['name']
+        area=request.POST['especialidad']
+        doctor_id=request.POST['select']
+        date_cita=request.POST['date']
         time=request.POST['time']
-        print(fecha_cita)
-        select=request.POST['select']
         email=request.POST['email']
-        print(select)
+        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area=area,hora=time,fecha=date_cita)
+        appointment.save()
+        subject="Sacaste una cita en B&J Clinicas de la Salud"
+        message="Acabas de sacar una cita para el dia "+date_cita+" en B&J Clinicas de la Salud\nPaciente: "+name+"\nEspecialidad: "+specialty+"ID del doctor: "+doctor_id+"\nFecha: "+str(date_cita)+"Hora: "+time+"\nTE ESPERAMOS"
+        email_from=settings.EMAIL_HOST_USER
+        recipient_list=[email]
+        send_mail(subject,message,email_from,recipient_list,)
         return redirect('/')
 
 
