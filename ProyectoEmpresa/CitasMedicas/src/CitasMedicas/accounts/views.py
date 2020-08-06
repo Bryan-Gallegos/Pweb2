@@ -21,7 +21,8 @@ def make_appointment(request):
         fecha_actual=datetime.now()
         #datos
         name=request.POST['name']
-        area=request.POST['especialidad']
+        area=""+str(request.POST['area_solicitada'])
+        print(area)
         doctor_id=request.POST['select']
         date_cita=request.POST['date']
         time=request.POST['time']
