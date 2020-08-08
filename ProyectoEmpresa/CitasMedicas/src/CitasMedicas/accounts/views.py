@@ -16,14 +16,36 @@ from datetime import date
 from datetime import datetime
 
 # Create your views here.
+"""
+def do_appointment(request):
+    if request.method=='POST':
+        print("paso por aca")
+        fecha_actual=datetime.now()
+        #datos
+        name=request.POST['name']
+        doctor_id=Doctor.objects.get(id=request.POST["select"])
+        area="Emergencias"  
+        date_cita=request.POST['date']
+        time=request.POST['time']
+        email=request.POST['email']
+        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area="Emergencias",hora=time,fecha=date_cita)
+        appointment.save()
+        subject="Sacaste una cita en B&J Clinicas de la Salud"
+        message="Acabas de sacar una cita para el dia "+date_cita+" en B&J Clinicas de la Salud\nPaciente: "+name+"\nEspecialidad: "+specialty+"ID del doctor: "+doctor_id+"\nFecha: "+str(date_cita)+"Hora: "+time+"\nTE ESPERAMOS"
+        email_from=settings.EMAIL_HOST_USER
+        recipient_list=[email]
+        send_mail(subject,message,email_from,recipient_list,)
+    return render(request,'index.html',{})
+    """
+
 def make_appointment(request):
     if request.method=='POST':
         fecha_actual=datetime.now()
         #datos
         name=request.POST['name']
-        area=""+str(request.POST['area_solicitada'])
-        print(area)
-        doctor_id=request.POST['select']
+        doctor_id=Doctor.objects.get(id=request.POST["select"])
+        area_doctor=Doctor.objects.get(id=doctor_id)
+        area=area_doctor.specialty
         date_cita=request.POST['date']
         time=request.POST['time']
         email=request.POST['email']
@@ -34,11 +56,30 @@ def make_appointment(request):
         email_from=settings.EMAIL_HOST_USER
         recipient_list=[email]
         send_mail(subject,message,email_from,recipient_list,)
-        return redirect('/')
+        return render(request,'index.html',{})
 
 
 def do_appointment(request,area):
     doctors=Doctor.objects.all()
+    if request.method=='POST':
+        fecha_actual=datetime.now()
+        #datos
+        print("paso por aca")
+        name=request.POST['name']
+        doctor_id=Doctor.objects.get(id=request.POST["select"])
+        area_doctor=Doctor.objects.get(id=doctor_id.id)
+        area_cita=area
+        date_cita=request.POST['date']
+        time=request.POST['time']
+        email=request.POST['email']
+        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area=area_cita,hora=time,fecha=date_cita)
+        appointment.save()
+        subject="Sacaste una cita en B&J Clinicas de la Salud"
+        message="Acabas de sacar una cita para el dia "+date_cita+" en B&J Clinicas de la Salud\nPaciente: "+name+"\nEspecialidad: "+area_cita+"\nID del doctor: "+str(doctor_id.id)+"\nFecha: "+str(date_cita)+"Hora: "+time+"\nTE ESPERAMOS"
+        email_from=settings.EMAIL_HOST_USER
+        recipient_list=[email]
+        send_mail(subject,message,email_from,recipient_list,)
+        return render(request,'index.html',{})
     return render(request,"do_appointment.html",{'esp':area,'doctors':doctors})
 
 def make_appointment_page(request):
@@ -48,6 +89,7 @@ def make_appointment_page(request):
     espec=list(OrderedDict.fromkeys(espec))
     print(espec)
     return render(request,'specialty_page.html',{'spec':espec})
+
 def modificate_obj(request,id):
     doc=Doctor.objects.get(id=id)
     return render(request,'modificate_obj.html',{'doc':doc})
