@@ -62,6 +62,7 @@ def make_appointment(request):
 def do_appointment(request,area):
     doctors=Doctor.objects.all()
     if request.method=='POST':
+        #esta es la fecha actual
         fecha_actual=datetime.now()
         #datos
         print("paso por aca")
