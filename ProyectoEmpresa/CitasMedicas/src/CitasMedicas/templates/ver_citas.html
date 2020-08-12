@@ -23,7 +23,7 @@
                                     <td>{{ cite.name }}</td>
                                     <td>{{ cite.area }}</td>
                                     {% for doc in doctors %}
-                                    {% if cite.doctor_id == doc.id %}
+                                    {% if cite.doctor_id == doc %}
                                     <td>{{ doc.name }}</td>
                                     {% endif %}
                                     {% endfor %}
@@ -34,7 +34,7 @@
                             {% endfor %}
                         </table>
         <div id="footer_content">
-            This is Footer Print on Every Page of Pdf Page No. <pdf:pagenumber> / Total Page : <pdf:pagecount>
+            Este es el pie de pagina<pdf:pagenumber> / Total Page : <pdf:pagecount>
         </div>
 
     </body>
