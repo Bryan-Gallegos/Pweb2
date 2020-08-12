@@ -3,9 +3,19 @@
 <html lang="es">
     <head>
         <title> Citas de {{ user.first_name}}</title>
+        <style>
+            th,td{
+            padding:3px;
+            background-color: aquamarine;
+            }
+            th{
+            background-color:skyblue;
+            color:white;
+            }
+        </style>
     </head>
     <body>
-        <div id="header_content">
+        <div id="header_content" style="font-size: 60px;color: darkturquoise;">
             <CENTER><strong>B&J Clinicas de la Salud</strong></CENTER>
         </div>
         <table class="table">
@@ -24,7 +34,7 @@
                                     <td>{{ cite.area }}</td>
                                     {% for doc in doctors %}
                                     {% if cite.doctor_id == doc %}
-                                    <td>{{ doc.name }}</td>
+                                    <td>{{ doc.name }} {{doc.last_name}}</td>
                                     {% endif %}
                                     {% endfor %}
                                     <td>{{ cite.fecha }}</td>
