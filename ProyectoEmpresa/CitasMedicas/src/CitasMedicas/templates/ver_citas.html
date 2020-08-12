@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title> Citas de {{ user.first_name}}</title>
+    </head>
+    <body>
+        <div id="header_content">
+            <CENTER><strong>B&J Clinicas de la Salud</strong></CENTER>
+        </div>
+        <table class="table">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Especialidad</th>
+                                <th>Doctor</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                               
+                            </tr>
+                            {% for cite in cites %}
+                            {% if cite.email == user.email %}
+                                <tr>
+                                    <td>{{ cite.name }}</td>
+                                    <td>{{ cite.area }}</td>
+                                    {% for doc in doctors %}
+                                    {% if cite.doctor_id == doc.id %}
+                                    <td>{{ doc.name }}</td>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <td>{{ cite.fecha }}</td>
+                                    <td>{{ cite.hora }}</td>
+                                </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </table>
+        <div id="footer_content">
+            This is Footer Print on Every Page of Pdf Page No. <pdf:pagenumber> / Total Page : <pdf:pagecount>
+        </div>
+
+    </body>
+
+</html>
