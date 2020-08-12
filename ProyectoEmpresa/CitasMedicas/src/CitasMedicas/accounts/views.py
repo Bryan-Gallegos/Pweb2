@@ -17,6 +17,9 @@ from datetime import datetime
 
 # Create your views here.
 
+def manage_cites(request):
+    return render(request,'manage_cites.html',{})
+
 def ver_citas(request):
     cites=[cite for cite in Cite.objects.all()]
     doctors=[doctor for doctor in Doctor.objects.all()]

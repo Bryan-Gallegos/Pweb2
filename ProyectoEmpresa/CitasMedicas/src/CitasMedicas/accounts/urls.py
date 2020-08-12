@@ -21,4 +21,5 @@ urlpatterns=[
     #User
     path('ver_citas',views.ver_citas,name='ver_citas'),
     #Admin
+    path('manage_cites',views.manage_cites,name='manage_cites'),
 ]
