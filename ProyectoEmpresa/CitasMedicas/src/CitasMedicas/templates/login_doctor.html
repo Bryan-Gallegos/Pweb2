@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Login Doctor</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/login_doctor.css' %}">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.css"/>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="login-wrapper">
+    <form action="login_doctor" method="POST">
+        {% csrf_token %}
+        <h1><span>Doctors</span> Login.</h1>
+        <div class="input-row">
+            <span class="icon"><i class="fa fa-at"></i></span>
+            <input type="text" name ="email" placeholder="Email"/>
+        </div>
+
+        <div class="input-row">
+            <span class="icon"><i class="fa fa-lock"></i></span>
+            <input type="password" name="password" placeholder="Password"/>
+        </div>
+
+        <div class="submit-row">
+            <input type="submit" value="Sign in &raquo;"/>
+            <span class="reset">or <a href="#">Reset Password</a></span>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
