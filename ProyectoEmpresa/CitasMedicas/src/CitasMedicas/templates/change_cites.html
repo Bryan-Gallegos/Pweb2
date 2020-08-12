@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Planilla B&J Clinicas de la Salud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/delete_page.css' %}">
+</head>
+<body>
+    <CENTER>
+    <h1>Citas actualmente registradas</h1>
+    {% for cite in cites %}
+    <fieldset>
+        <h1>{{cite.name}}</h1><p>{{cite.area}}</p>
+        <a href="delete_obj/{{doc.id}}" class="boton">Eliminar </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="modificate_obj/{{doc.id}}" class="boton1" style="color: rgb(73, 155, 26);">Modificar </a>
+    </fieldset><br>
+    {% endfor %}
+    </CENTER>
+</body>
+</html>

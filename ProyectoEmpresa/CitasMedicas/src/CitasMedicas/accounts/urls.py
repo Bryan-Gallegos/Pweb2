@@ -22,4 +22,6 @@ urlpatterns=[
     path('ver_citas',views.ver_citas,name='ver_citas'),
     #Admin
     path('manage_cites',views.manage_cites,name='manage_cites'),
+    path('change_cites',views.change_cites,name='change_cites'),
+    path('show_specialty_for_cites',views.show_specialty_for_cites,name='show_specialty_for_cites'),
 ]

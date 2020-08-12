@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/specialty_page.css' %}">
 </head>
-<body style="background-image: url(https://hipertextual.com/archivo/wp-content/uploads/2014/11/fondo-pantalla.jpg);">
+<body style="background-image: url(https://s1.1zoom.me/big0/628/Roads_Mountains_Scenery_451100.jpg);">
     <CENTER>
-    <h1 style="font-size: 60px;">Escoja la especialidad en la que desea atenderse</h1>
+    <h1 style="font-size: 60px;color:turquoise;">Escoja la especialidad en la que va a realizar una cita</h1>
     {% for spe in spec %}
     <a style="background-color: darkseagreen;font-size: 40px;" href="do_appointment/{{spe}}" class="boton">{{ spe }} </a><br><br>
     {% endfor %}

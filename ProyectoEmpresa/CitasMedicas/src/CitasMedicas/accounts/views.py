@@ -17,6 +17,16 @@ from datetime import datetime
 
 # Create your views here.
 
+def change_cites(request):
+    cites=Cite.objects.all()
+    return render(request,'change_cites.html',{'cites':cites})
+
+def show_specialty_for_cites(request):
+    prueba=Doctor.objects.all()
+    espec=[""+doc.specialty for doc in prueba]
+    espec=list(OrderedDict.fromkeys(espec))
+    return render(request,'specialty_page_for_cites.html',{'spec':espec})
+
 def manage_cites(request):
     return render(request,'manage_cites.html',{})
 
@@ -68,10 +78,8 @@ def do_appointment(request,area):
 
 def make_appointment_page(request):
     prueba=Doctor.objects.all()
-    print(prueba)
     espec=[""+doc.specialty for doc in prueba]
     espec=list(OrderedDict.fromkeys(espec))
-    print(espec)
     return render(request,'specialty_page.html',{'spec':espec})
 
 def modificate_obj(request,id):
@@ -86,6 +94,7 @@ def delete_obj(request,id):
 def delete_page(request):
     doctors=Doctor.objects.all()
     return render(request,'delete_page.html',{'doctors':doctors})
+
 def ver_contrato(request,id):
     select_doctor=Doctor.objects.get(id=id)
     data={'doctor':select_doctor}
