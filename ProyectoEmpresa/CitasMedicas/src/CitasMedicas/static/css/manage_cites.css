@@ -1,0 +1,36 @@
+body{
+    background: url("https://image.freepik.com/vector-gratis/pancarta-enrollable-realista-soporte-horizontal-cartelera-blanco-exposicion_1441-2212.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Century Gothic';
+}
+boton {
+    border: transparent;
+    text-decoration:none;
+    font-weight:6000;
+    font-size:20px;
+    color:#ffffff;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    background-color:#67e1e6;
+    
+}
+a {
+    font-family: 'Century Gothic';
+    border: transparent;
+    text-decoration:none;
+    font-weight:6000;
+    font-size:20px;
+    color: steelblue;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:150px;
+    padding-right:150px;
+    
+}
+p{
+    color: rgb(46, 170, 153);
+    
+    font-size: 30px;
+}

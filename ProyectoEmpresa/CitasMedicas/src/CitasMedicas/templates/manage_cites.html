@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <br><br>
+    <title>Panel de Control B&J</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/manage_cites.css' %}">
+</head>
+<body>
+    <CENTER>
+    <p>Buen dia admin {{ user.first_name }} {{ user.last_name }}<br>Que puedo hacer por ti hoy?</p>
+    <div>
+    <a href="add" class="boton">Insertar</a><br><br>
+    </div>
+    <a href="delete_page" class="boton">Modificar/Eliminar</a><br><br>
+    <a href="show_doctors" class="boton">Ver Planilla </a><br><br>
+    </CENTER>
+</body>
+</html>
