@@ -16,27 +16,23 @@ from datetime import date
 from datetime import datetime
 
 # Create your views here.
-"""
-def do_appointment(request):
+
+def login_doctor(request):
     if request.method=='POST':
-        print("paso por aca")
-        fecha_actual=datetime.now()
-        #datos
-        name=request.POST['name']
-        doctor_id=Doctor.objects.get(id=request.POST["select"])
-        area="Emergencias"  
-        date_cita=request.POST['date']
-        time=request.POST['time']
         email=request.POST['email']
-        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area="Emergencias",hora=time,fecha=date_cita)
-        appointment.save()
-        subject="Sacaste una cita en B&J Clinicas de la Salud"
-        message="Acabas de sacar una cita para el dia "+date_cita+" en B&J Clinicas de la Salud\nPaciente: "+name+"\nEspecialidad: "+specialty+"ID del doctor: "+doctor_id+"\nFecha: "+str(date_cita)+"Hora: "+time+"\nTE ESPERAMOS"
-        email_from=settings.EMAIL_HOST_USER
-        recipient_list=[email]
-        send_mail(subject,message,email_from,recipient_list,)
-    return render(request,'index.html',{})
-    """
+        name=request.POST['password']
+        doctor=Doctor.authenticate(email=email,password=name)
+        print(doctor)
+        if doctor:
+            auth.login(request,doctor)
+            subject="Iniciaste sesion en B&J"
+            message="Acabas de iniciar sesion en B&J clinicas de la salud, Buen dia doctor"
+            email_from=settings.EMAIL_HOST_USER
+            recipient_list=[doctor.email]
+            send_mail(subject,message,email_from,recipient_list,)
+            print("pase por aqui")
+            return redirect('/')
+    return render(request,'login_doctor.html',{})
 
 def make_appointment(request):
     if request.method=='POST':
@@ -49,7 +45,8 @@ def make_appointment(request):
         date_cita=request.POST['date']
         time=request.POST['time']
         email=request.POST['email']
-        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area=area,hora=time,fecha=date_cita)
+        #print(str(email)
+        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area=area,email=email,hora=time,fecha=date_cita)
         appointment.save()
         subject="Sacaste una cita en B&J Clinicas de la Salud"
         message="Acabas de sacar una cita para el dia "+date_cita+" en B&J Clinicas de la Salud\nPaciente: "+name+"\nEspecialidad: "+specialty+"ID del doctor: "+doctor_id+"\nFecha: "+str(date_cita)+"Hora: "+time+"\nTE ESPERAMOS"
@@ -73,14 +70,14 @@ def do_appointment(request,area):
         date_cita=request.POST['date']
         time=request.POST['time']
         email=request.POST['email']
-        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area=area_cita,hora=time,fecha=date_cita)
+        appointment=Cite.objects.create(name=name,doctor_id=doctor_id,area=area_cita,email=email,hora=time,fecha=date_cita)
         appointment.save()
         subject="Sacaste una cita en B&J Clinicas de la Salud"
         message="Acabas de sacar una cita para el dia "+date_cita+" en B&J Clinicas de la Salud\nPaciente: "+name+"\nEspecialidad: "+area_cita+"\nID del doctor: "+str(doctor_id.id)+"\nFecha: "+str(date_cita)+"Hora: "+time+"\nTE ESPERAMOS"
         email_from=settings.EMAIL_HOST_USER
         recipient_list=[email]
         send_mail(subject,message,email_from,recipient_list,)
-        return render(request,'index.html',{})
+        return redirect('/')
     return render(request,"do_appointment.html",{'esp':area,'doctors':doctors})
 
 def make_appointment_page(request):
@@ -132,7 +129,6 @@ def otro_pdf(request):
         return HttpResponse("Error Generating PDF")
 
 def add(request):
-    print('crear imagen')
     if request.method=='POST':
         print('creando doctor')
         Name=request.POST['name']

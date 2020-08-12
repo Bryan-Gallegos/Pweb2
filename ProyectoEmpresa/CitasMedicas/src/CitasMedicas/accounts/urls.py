@@ -17,5 +17,6 @@ urlpatterns=[
     path('make_appointment_page',views.make_appointment_page,name='make_appointment_page'),
     path('do_appointment/<str:area>',views.do_appointment,name='do_appointment'),
     path('make_appointment',views.make_appointment,name='make_appointment'),
-    #path('do_appointment',views.do_appointment,name='do_appointment'),
+    #Doctor
+    path('login_doctor',views.login_doctor,name='login_doctor'),
 ]

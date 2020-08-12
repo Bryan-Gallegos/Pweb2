@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'cita.apps.CitaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
