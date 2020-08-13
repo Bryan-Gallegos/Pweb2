@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Citas en B&J Clinicas de la Salud</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/show_doctors.css' %}">
+</head>
+<body>
+    <CENTER>
+    <h1>Citas actualmente registradas</h1>
+    {% for cite in cites %}
+    <h1>{{cite.name}}</h1><h1 style="font-size: small;"> {{cite.fecha}}</h1>
+    <a href="ver_cita/{{ cite.id }}" class="boton">Ver detalles de la cita </a><br><br>
+    {% endfor %}
+    <a href="pdf_cite" class="boton">Ver Todas las Citas </a><br><br>
+    </CENTER>
+</body>
+</html>

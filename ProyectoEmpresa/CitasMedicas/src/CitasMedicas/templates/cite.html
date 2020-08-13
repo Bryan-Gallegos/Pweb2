@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Contrato de {{doctor.name}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/manage.css' %}">
+</head>
+<body>
+    <CENTER><h1>Detalles de cita</h1></CENTER>
+    <p>Esta es la cita numero {{cite.id}} </p>
+    <p>Persona que sera atendida: {{cite.name}} </p>
+</body>
+</html>

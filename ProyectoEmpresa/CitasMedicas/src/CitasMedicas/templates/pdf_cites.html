@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Citas B&J Clinicas de la Salud</title>
+    <style>
+        th,td{
+        padding:3px;
+        }
+        th{
+        background-color:skyblue;
+        color:white;
+        }
+
+        @page{
+         size:a4 portrait;
+             @frame header_frame {
+                   -pdf-frame-content:header_content;
+                   left:60pt;
+                   width:512pt;
+                   top:60pt;
+                   height:50pt
+             }
+             @frame footer_frame {
+                   -pdf-frame-content:footer_content;
+                   left:60pt;
+                   width:512pt;
+                   top:772pt;
+                   height:30pt
+             }
+             @frame content_frame {
+                left:50pt;
+                width:512pt;
+                top:90pt;
+                height:620pt;
+             }
+
+        }
+    </style>
+</head>
+<body>
+<div id="header_content">
+    <CENTER><strong>Citas en B&J Clinicas de la Salud</strong></CENTER>
+</div>
+<table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Doctor</th>
+                        <th style="width: 75px;">Especialidad</th>
+                        <th>Fecha</th>
+                        <th style="width: 45px;">Hora</th>
+                        <th>Correo Conf</th>
+                       
+                    </tr>
+                    {% for cite in cites %}
+                        <tr>
+                            <td>{{ cite.name }}</td>
+                            <td>{{ cite.doctor_id.name }} {{ cite.doctor_id.last_name }}</td>
+                            <td>{{ cite.doctor_id.specialty }}</td>
+                            <td>{{ cite.fecha }}</td>
+                            <td>{{ cite.hora }}</td>
+                            <td>{{ cite.email }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+<div id="footer_content">
+    This is Footer Print on Every Page of Pdf Page No. <pdf:pagenumber> / Total Page : <pdf:pagecount>
+</div>
+</body>
+</html>
