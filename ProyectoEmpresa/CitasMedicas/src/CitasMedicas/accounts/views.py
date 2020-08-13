@@ -17,10 +17,60 @@ from datetime import datetime
 
 # Create your views here.
 
+def pdf_cite(request):
+    all_cites=Cite.objects.all()
+    doctors=Doctor.objects.all()
+    data={'cites':all_cites,'doctors':doctors}
+    template=get_template("pdf_cites.html")
+    data_p=template.render(data)
+    response=BytesIO()
+    pdfPage=pisa.pisaDocument(BytesIO(data_p.encode("UTF-8")),response)
+    if not pdfPage.err:
+        return HttpResponse(response.getvalue(),content_type="application/pdf")
+    else:
+        return HttpResponse("Error Generating PDF")
+
+
+def ver_cita(request,id):
+    select_cite=Cite.objects.get(id=id)
+    data={'cite':select_cite}
+    template=get_template("cite.html")
+    data_p=template.render(data)
+    response=BytesIO()
+    pdfPage=pisa.pisaDocument(BytesIO(data_p.encode("UTF-8")),response)
+    if not pdfPage.err:
+        return HttpResponse(response.getvalue(),content_type="application/pdf")
+    else:
+        return HttpResponse("Error Generating PDF")
+
+def show_cites(request):
+    cites=Cite.objects.all()
+    return render(request,'show_cites.html',{'cites':cites})
+
+
 def modificate_cite(request,id):
+    if request.method=='POST':
+        cite_mod=Cite.objects.get(id=id)
+        cite_mod.name=request.POST['name']
+        cite_mod.doctor_id=Doctor.objects.get(id=request.POST["select"])
+        cite_mod.fecha=request.POST['date']
+        cite_mod.hora=request.POST['time']
+        cite_mod.email=request.POST['email']
+        cite_mod.save()
+        return redirect('/')
+    hoy=datetime.now()
+    print(str(hoy))
     cite=Cite.objects.get(id=id)
     doctors=Doctor.objects.all()
-    return render(request,'modificate_cite.html',{'cite':cite,'doctors':doctors})
+    print(str(cite.fecha))
+    cadena=str(cite.fecha)
+    fecha=datetime(2020,hoy.month,int(cadena[cadena.rfind("-")+1:len(cadena)]))
+    cadena_hora=str(cite.hora)
+    print(cadena_hora[:cadena_hora.find(":")])
+    hora_cita=[cadena_hora[:cadena_hora.find(":")],cadena_hora[cadena_hora.find(":")+1:cadena_hora.rfind(":")]]
+    hora=int(hora_cita[0])
+    minuto=int(hora_cita[1])
+    return render(request,'modificate_cite.html',{'cite':cite,'doctors':doctors,'hoy':hoy,'fecha':fecha,'hora':hora,'minuto':minuto})
 
 
 def delete_cite(request,id):

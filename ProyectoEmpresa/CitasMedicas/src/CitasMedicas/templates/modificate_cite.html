@@ -18,20 +18,22 @@
                     {%csrf_token%}
                 <div class="login-form">
                     <div class="control-group">
-                        <input type="text" name="name" placeholder="Inserte aqui tu nombre" ><br><br>
-                        <input type="text" name="area_solicitada" value="{{esp}}" disabled><br><br>
+                        <input type="text" name="name" value="{{cite.name}}" ><br><br>
+                        <input type="text" name="area_solicitada" value="{{cite.area}}" disabled><br><br>
                         <select style="background-color: rgb(243, 243, 243) ;" name="select">
-                            <option selected>Escoja al doctor</option>
+                            <option selected value="{{cite.doctor_id.id}}">{{cite.doctor_id.name}} {{cite.doctor_id.last_name}} </option>
                             {% for doc in doctors %}
-                            {% if doc.specialty == esp %}
+                            {% if doc.specialty == cite.area %}
+                            {% if doc.name != cite.doctor_id.name %}
                             <option value="{{doc.id}}">{{doc.name}} {{doc.last_name}}</option>
+                            {% endif %}
                             {% endif %}
                             {% endfor %}
                           </select>
-                          <br><br><input type="date" name=date><br><br>
-                        <input type="time" name="time"><br><br>
+                          <br><br><input type="date" min="{{hoy.year}}-0{{hoy.month}}-{{hoy.day}}" value="{{fecha.year}}-0{{fecha.month}}-{{fecha.day}}" name=date><br><br>
+                        <input type="time"  name="time" value="{{ hora }}:{{ minuto }}"><br><br>
                         <input type="text" name="email" value="{{user.email}}"><br><br><br>
-                    <input type="submit" value="Sacar Cita" style="background-color: dodgerblue;color: white;"> 
+                    <input type="submit" value="Modificar Cita" style="background-color: dodgerblue;color: white;">
                 </div>
             </form>
             </div>

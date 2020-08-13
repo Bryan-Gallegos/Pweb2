@@ -27,4 +27,7 @@ urlpatterns=[
     path('show_specialty_for_cites',views.show_specialty_for_cites,name='show_specialty_for_cites'),
     path('delete_cite/<int:id>',views.delete_cite,name='delete_cite'),
     path('modificate_cite/<int:id>',views.modificate_cite,name='modificate_cite'),
+    path('show_cites',views.show_cites,name='show_cites'),
+    path('ver_cita/<int:id>',views.ver_cita,name='ver_cita'),
+    path('pdf_cite',views.pdf_cite,name='pdf_cite'),
 ]
