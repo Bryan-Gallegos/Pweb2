@@ -13,8 +13,8 @@
     {% for cite in cites %}
     <fieldset>
         <h1>{{cite.name}}</h1><p>{{cite.area}}</p>
-        <a href="delete_obj/{{doc.id}}" class="boton">Eliminar </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="modificate_obj/{{doc.id}}" class="boton1" style="color: rgb(73, 155, 26);">Modificar </a>
+        <a href="delete_cite/{{cite.id}}" class="boton">Eliminar </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="modificate_cite/{{cite.id}}" class="boton1" style="color: rgb(73, 155, 26);">Modificar </a>
     </fieldset><br>
     {% endfor %}
     </CENTER>

@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>B&J Añadir Doctor</title>
+    <title>B&J Modificar Doctor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{% static 'css/new_manage.css' %}">
 </head>
-<body>
+<body style="background: url(https://modoweb.es/wp-content/uploads/2017/01/modo-web-diseno-de-pagina-web-fondo-16-1.jpg);">
     <CENTER>
         <div id="wrapper" class="add">
-            <form action="add" method="POST">
+            <form action="\../accounts/modificate_doctor/{{doc.id}}" method="POST">
                     {%csrf_token%}
                     <div>
                         <label>Nombre: </label><br><input style="color: aqua;" type="text" name="name" placeholder="Inserte aqui el nombre" value="{{ doc.name }}"><br>
@@ -27,7 +27,7 @@
                     <div>
                         <label>Codigo: </label><br><input type="text" name="code" placeholder="Inserte aqui el codigo" maxlength="5" value="{{ doc.code }}"><br>
                     </div><br>
-                    <input type="submit" value="AÑADIR">  
+                    <input type="submit" value="MODIFICAR">  
             </form>
         </div>
     </CENTER>
