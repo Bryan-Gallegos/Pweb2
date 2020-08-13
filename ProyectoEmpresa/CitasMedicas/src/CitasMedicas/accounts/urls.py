@@ -21,7 +21,10 @@ urlpatterns=[
     #User
     path('ver_citas',views.ver_citas,name='ver_citas'),
     #Admin
+    path('modificate_doctor/<int:id>',views.modificate_doctor,name='modificate_doctor'),
     path('manage_cites',views.manage_cites,name='manage_cites'),
     path('change_cites',views.change_cites,name='change_cites'),
     path('show_specialty_for_cites',views.show_specialty_for_cites,name='show_specialty_for_cites'),
+    path('delete_cite/<int:id>',views.delete_cite,name='delete_cite'),
+    path('modificate_cite/<int:id>',views.modificate_cite,name='modificate_cite'),
 ]

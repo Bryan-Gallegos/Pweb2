@@ -17,6 +17,18 @@ from datetime import datetime
 
 # Create your views here.
 
+def modificate_cite(request,id):
+    cite=Cite.objects.get(id=id)
+    doctors=Doctor.objects.all()
+    return render(request,'modificate_cite.html',{'cite':cite,'doctors':doctors})
+
+
+def delete_cite(request,id):
+    obj=Cite.objects.get(id=id)
+    obj.delete()
+    return redirect('/')
+
+
 def change_cites(request):
     cites=Cite.objects.all()
     return render(request,'change_cites.html',{'cites':cites})
@@ -123,6 +135,22 @@ def otro_pdf(request):
     else:
         return HttpResponse("Error Generating PDF")
 
+def modificate_doctor(request,id):
+    obj=Doctor.objects.get(id=id)
+    print("Esta pasando por el metodo para modificar")
+    if request.method=='POST':
+        print("Entro al metodo para modificar")
+        obj.name=request.POST['name']
+        obj.last_name=request.POST['last_name']
+        obj.img="pics/"+request.POST['img']
+        obj.specialty=request.POST['especialty']
+        obj.code=request.POST['code']
+        obj.save()
+        return render(request,'manage.html',{})
+    return render(request,'manage.html',{})
+
+
+
 def add(request):
     if request.method=='POST':
         print('creando doctor')
@@ -136,7 +164,6 @@ def add(request):
         print(Esp)
         imgs=Doctor.objects.create(name=Name,last_name=Last_name,img=Foto,specialty=Esp,code=Cod)
         imgs.save()
-        print('doctor agregado')
         docs=Doctor.objects.all()
     return render(request,'add.html',{})
 
